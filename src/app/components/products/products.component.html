@@ -1,0 +1,41 @@
+<h1>{{ componentName }}</h1>
+<button (click)="onHandleClick()">Click</button>
+<input type="text" [(ngModel)]="productName" />
+{{ productName }}
+
+<div *ngIf="isStatus">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá sản phẩm</th>
+        <th>Trạng thái</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productList; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.status ? "Còn hàng" : "Hết hàng" }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="onHandleDelete(product.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- 
+    B1: - Sử dụng module FormsModule trong file app.module.ts
+          import { FormsModule } from '@angular/forms'
+        - sử dụng
+            imports: [FormsModule]
+    B2: Khai báo thuộc tính productName: string = "";
+    B3: ngoài mặt view:
+        <input type="text" [(ngModel)]="productName" />
+        {{ productName }}
+ -->

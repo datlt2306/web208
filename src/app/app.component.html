@@ -3,4 +3,16 @@
   <a routerLink="hello">Hello</a>
   <a routerLink="about">About</a>
 </header>
+<hr />
+<app-hello [data]="name"></app-hello>
+<app-products></app-products>
 <router-outlet></router-outlet>
+
+<!-- 
+const name = "Dat";
+
+<Hello data={name} />
+
+const myName = props.name;
+{myName}
+ -->

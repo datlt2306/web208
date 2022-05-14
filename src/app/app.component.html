@@ -1,18 +1,5 @@
-<header>
-  header
-  <a routerLink="hello">Hello</a>
-  <a routerLink="about">About</a>
-</header>
+<h2>Product List Component</h2>
+<app-products [products]="productList"></app-products>
 <hr />
-<app-hello [data]="name"></app-hello>
-<app-products></app-products>
-<router-outlet></router-outlet>
-
-<!-- 
-const name = "Dat";
-
-<Hello data={name} />
-
-const myName = props.name;
-{myName}
- -->
+<h2>Product Add Component</h2>
+<app-product-add (createProduct)="onHandleAdd($event)"></app-product-add>

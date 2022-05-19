@@ -9,15 +9,15 @@ export class ProductService {
     return data.find(item => item.id == id)
   }
   getProductList() {
-
+    return data;
   }
   removeProduct() {
 
   }
-  addProduct(product) {
+  addProduct() {
 
   }
-  updateProduct(product) {
+  updateProduct() {
 
   }
 }

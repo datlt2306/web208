@@ -2,6 +2,7 @@
 
 import { Component, Input, OnInit } from '@angular/core';
 import { IProduct } from '../../models/Product';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-products',
@@ -9,17 +10,12 @@ import { IProduct } from '../../models/Product';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  @Input() products!: IProduct[]
-  productDetail!: IProduct;
-  constructor() { }
+  products!: IProduct[]
+  constructor(private productService: ProductService) {
+    this.products = this.productService.getProductList()!;
+  }
 
   ngOnInit(): void {
   }
-  onHandleDelete(id: number) {
-    this.products = this.products.filter(product => product.id !== id);
-  }
-  onHandleGetInfo(product: IProduct) {
-    this.productDetail = product;
-    console.log('product', product)
-  }
+
 }

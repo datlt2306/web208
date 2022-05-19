@@ -15,9 +15,7 @@
       <td>{{ product.price }}</td>
       <td>{{ product.status ? "Còn hàng" : "hết hàng" }}</td>
       <td>
-        <button class="btn btn-danger" (click)="onHandleDelete(product.id)">
-          Delete
-        </button>
+        <button class="btn btn-danger">Delete</button>
         <button class="btn btn-info ms-1" (click)="onHandleGetInfo(product)">
           Detail
         </button>
@@ -25,9 +23,3 @@
     </tr>
   </tbody>
 </table>
-<div class="detail" *ngIf="productDetail">
-  <hr />
-  <h2>Product Detail Component</h2>
-  <app-product-detail [product]="productDetail"></app-product-detail>
-  <router-outlet></router-outlet>
-</div>

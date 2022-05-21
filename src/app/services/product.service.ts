@@ -15,7 +15,8 @@ export class ProductService {
     // return data.find(item => item.id === id);
     return this.http.get<IProduct>(`http://localhost:3000/products/${id}`);
   }
-  getProductList() {
+  getProductList(): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>(`http://localhost:3000/products`);
   }
   removeProduct() {
 

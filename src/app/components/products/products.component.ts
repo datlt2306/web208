@@ -11,11 +11,18 @@ import { ProductService } from '../../services/product.service';
 })
 export class ProductsComponent implements OnInit {
   products!: IProduct[]
-  constructor(private productService: ProductService) {
-
-  }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    // chạy
+    this.getProductList();
+  }
+
+  // khai báo
+  getProductList() {
+    this.productService.getProductList().subscribe(data => {
+      this.products = data;
+    })
   }
 
 }

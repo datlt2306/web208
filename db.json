@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "name": "dsd12313",
+      "name": "product A updated",
       "price": 1313131,
       "status": true,
       "id": 1
@@ -23,6 +23,18 @@
       "price": 321313131,
       "status": true,
       "id": 4
+    },
+    {
+      "name": "",
+      "price": 0,
+      "status": true,
+      "id": 5
+    },
+    {
+      "name": "",
+      "price": 0,
+      "status": true,
+      "id": 6
     }
   ]
 }

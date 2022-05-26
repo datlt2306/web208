@@ -9,10 +9,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: "", component: HomeComponent, pathMatch: 'full' },
+  { path: "", component: HomeComponent },
   { path: 'product', component: ProductsComponent },
   { path: "product/add", component: ProductAddComponent },
   { path: "product/:id", component: ProductDetailComponent },
+  { path: "product/edit/:id", component: ProductAddComponent },
   { path: "**", component: NotFoundComponent },
 ];
 

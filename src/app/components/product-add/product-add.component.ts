@@ -22,15 +22,14 @@ export class ProductAddComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // lấy id trên url
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-
-    // nếu có id thì call service get product để lấy thông tin trả về form
-    this.productService.getProduct(id).subscribe(data => this.product = data);
+    if (id) {
+      // nếu có id thì call service get product để lấy thông tin trả về form
+      this.productService.getProduct(id).subscribe(data => this.product = data);
+    }
   }
   onSubmit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-
     if (id) {
       // call services edit product
       // nếu thành công thì trả về sản phẩm vừa cập nhật xong

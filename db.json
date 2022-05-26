@@ -5,6 +5,24 @@
       "price": 1313131,
       "status": true,
       "id": 1
+    },
+    {
+      "name": "12313",
+      "price": 2131231231,
+      "status": true,
+      "id": 2
+    },
+    {
+      "name": "product A",
+      "price": 1232132131,
+      "status": true,
+      "id": 3
+    },
+    {
+      "name": "12321321",
+      "price": 321313131,
+      "status": true,
+      "id": 4
     }
   ]
 }

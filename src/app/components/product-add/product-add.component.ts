@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { IProduct } from '../../models/Product';
 import { ProductService } from '../../services/product.service';
 
@@ -14,7 +15,10 @@ export class ProductAddComponent implements OnInit {
     price: 0,
     status: true
   }
-  constructor(private productService: ProductService) { }
+  constructor(
+    private productService: ProductService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +26,9 @@ export class ProductAddComponent implements OnInit {
     console.log('submitted!')
     console.log(this.product);
     this.productService.addProduct(this.product).subscribe(data => {
-      console.log(data);
+
+      // chuyển hướng router
+      this.router.navigateByUrl('/product');
     })
     // this.createProduct.emit(this.product);
   }

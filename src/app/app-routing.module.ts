@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "about", component: AboutComponent, },
   {
-    path: "product", canActivate: [AdminGuard], children: [
+    path: "product", children: [
       { path: "", redirectTo: 'list', pathMatch: 'full' },
       { path: 'list', component: ProductsComponent },
       { path: "add", component: ProductAddComponent },

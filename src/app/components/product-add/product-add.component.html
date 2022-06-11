@@ -1,7 +1,35 @@
 <p>product-add works!</p>
 {{ product | json }}
-<form (ngSubmit)="onSubmit()">
-    <input type="text" [(ngModel)]="product.name" placeholder="name" name="name" />
-    <input type="number" [(ngModel)]="product.price" placeholder="price" name="price" />
-    <button>Submit</button>
+<form #formAdd="ngForm" (ngSubmit)="onSubmit()">
+    <input
+        type="text"
+        [(ngModel)]="product.name"
+        placeholder="name"
+        name="name"
+        #name="ngModel"
+        required
+        minlength="2"
+    />
+    <div *ngIf="name.errors" class="alert">
+        <div
+            *ngIf="name.errors?.['required'] && (name.dirty || name.touched)"
+            class="alert alert-danger"
+        >
+            Name is required
+        </div>
+        <div
+            *ngIf="name.errors?.['minlength'] && (name.dirty || name.touched)"
+            class="alert alert-danger"
+        >
+            Min length la 2
+        </div>
+    </div>
+    <input
+        type="number"
+        [(ngModel)]="product.price"
+        placeholder="price"
+        name="price"
+        #price="ngModel"
+    />
+    <button [disabled]="!formAdd.valid">Submit</button>
 </form>

@@ -1,0 +1,6 @@
+<!-- <input type="text" (keypress)="onHandlePress($event)" /> -->
+<form (submit)="onHandleAdd($event)">
+  <input type="text" name="content" [(ngModel)]="content" />
+  <button>Submit</button>
+</form>
+{{ content | json }}

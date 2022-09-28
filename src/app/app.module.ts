@@ -12,7 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
-
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,8 @@ import { DetailProductComponent } from './pages/detail-product/detail-product.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     // Khai báo và sử dụng module
   ],
   providers: [],

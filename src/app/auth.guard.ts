@@ -14,6 +14,8 @@ export class AuthGuard implements CanActivate {
     if (user.role != 1) {
       return false
     } else return true
+
+    // ng generate guard auth
   }
 
 }

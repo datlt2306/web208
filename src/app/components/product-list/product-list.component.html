@@ -1,5 +1,6 @@
-product component
-
 <div *ngFor="let item of products">
-  <a routerLink="/product/{{ item.id }}">{{ item.name }}</a>
+  <a routerLink="/product/{{ item.id }}"
+    >{{ item.name }} <button (click)="removeItem(item.id)">Remove</button></a
+  >
 </div>
+<p *ngIf="message">{{ message }}</p>

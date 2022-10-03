@@ -1,6 +1,24 @@
 <!-- <input type="text" (keypress)="onHandlePress($event)" /> -->
-<form (submit)="onHandleAdd($event)">
-  <input type="text" name="content" [(ngModel)]="content" />
+<!-- <form (submit)="onHandleAdd()" #formAdd="ngForm">
+  <input
+    type="text"
+    name="productName"
+    [(ngModel)]="product.name"
+    required
+    #productName="ngModel"
+  />
+  <span
+    [hidden]="productName.valid || productName.pristine"
+    class="alert alert-danger"
+  >
+    Name is required
+  </span>
+
+  <button [disabled]="!formAdd.form.valid">Submit</button>
+</form> -->
+
+<form (ngSubmit)="onHandleAdd()" [formGroup]="productForm">
+  <input type="text" formControlName="name" />
   <button>Submit</button>
 </form>
-{{ content | json }}
+{{ productForm.status | json }}

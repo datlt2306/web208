@@ -16,4 +16,13 @@ export class ProductService {
   removeProduct(id: any): Observable<IProduct> {
     return this.httpClient.delete<IProduct>(`${this.API}/${id}`);
   }
+  getProduct(id: number): Observable<IProduct> {
+    return this.httpClient.get<IProduct>(`${this.API}/${id}`);
+  }
+  updateProduct(product: IProduct): Observable<IProduct> {
+    return this.httpClient.put<IProduct>(`${this.API}/${product.id}`, product);
+  }
+  addProduct(product: IProduct): Observable<IProduct> {
+    return this.httpClient.post<IProduct>(`${this.API}`, product);
+  }
 }

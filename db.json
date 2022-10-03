@@ -2,7 +2,15 @@
   "products": [
     {
       "id": 3,
-      "name": "product C"
+      "name": "product C updated 2"
+    },
+    {
+      "id": 4,
+      "name": "Product A"
+    },
+    {
+      "id": 5,
+      "name": ""
     }
   ]
 }

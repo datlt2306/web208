@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -16,7 +18,13 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'product/add', component: ProductAddComponent
+  },
+  {
     path: 'product/:id', component: DetailProductComponent
+  },
+  {
+    path: 'product/:id/edit', component: EditProductComponent
   },
   { path: '**', component: NotFoundComponent },
 ];

@@ -1,0 +1,5 @@
+<!-- <input type="text" (keypress)="onHandlePress($event)" /> -->
+<form (submit)="onHandleEdit()" *ngIf="product">
+  <input type="text" name="product.name" [(ngModel)]="product.name" />
+  <button>Submit</button>
+</form>

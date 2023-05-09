@@ -6,5 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular';
+  title: string = 'Angular';
+  myName: string = "Le Trong Dat";
+  myAge: number = 20;
+  myStatus: boolean = true;
+  myInfo: { name: string, age: number } = {
+    name: "Dat",
+    age: 20
+  };
+  showInfo() {
+    return this.myName + 'Đẹp trai';
+  }
 }
+
+// logic, view, stylesheet
+// .ts, .html, .scss
+
+
+// function Component(){
+//   return JSX
+// }
+// <Component />

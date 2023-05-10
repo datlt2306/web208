@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Quản lý sản phẩm</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ products[0]._id }}</td>
+        <td width="50"><img width="50" src="{{ products[0].img }}" /></td>
+        <td>{{ products[0].name }}</td>
+        <td>{{ products[0].price }}</td>
+        <td>
+          <button class="btn btn-danger">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

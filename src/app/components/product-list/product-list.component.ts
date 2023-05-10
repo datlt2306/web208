@@ -23,4 +23,8 @@ export class ProductListComponent {
   toggle() {
     this.status = !this.status
   }
+
+  removeItem(id: number) {
+    this.products = this.products.filter(product => product._id !== id)
+  }
 }

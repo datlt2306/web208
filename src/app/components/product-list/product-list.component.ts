@@ -15,7 +15,12 @@ export class ProductListComponent {
 
   myName: string = "";
 
-  setValue() {
-    this.myName = "Le Trong Dat";
+  status: boolean = false
+
+  setValue(e: any) {
+    this.myName = e.target.value;
+  }
+  toggle() {
+    this.status = !this.status
   }
 }

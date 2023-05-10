@@ -1,7 +1,9 @@
 <div class="container">
     <h1>Quản lý sản phẩm</h1>
-    <!-- <input type="text" (input)="" /> -->
+    <input type="text" (input)="setValue($event)" />
     {{ myName }}
+    <div *ngIf="status">Hiển thị</div>
+    <button (click)="toggle()">Toggle</button>
     <hr />
     <table class="table-border table">
         <thead>
@@ -13,17 +15,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td width="50">{{ products[0]._id }}</td>
+            <!-- ${product.map(item => <tr>${item.name}</tr>)} -->
+            <tr *ngFor="let item of products; index as i">
+                <td width="50">{{ i + 1 }}</td>
                 <td width="50">
-                    <img width="50" [src]="products[0].img" />
+                    <img width="50" [src]="item.img" />
                 </td>
-                <td>{{ products[0].name }}</td>
-                <td>{{ products[0].price }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }}</td>
                 <td>
-                    <button class="btn btn-danger" (click)="setValue()">
-                        Xóa
-                    </button>
+                    <button class="btn btn-danger">Xóa</button>
                 </td>
             </tr>
         </tbody>

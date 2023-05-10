@@ -22,4 +22,7 @@ export class ProductListComponent {
   changeStatus() {
     this.status = !this.status;
   }
+  removeItem(id: any) {
+    this.products = this.products.filter(item => item._id !== id)
+  }
 }

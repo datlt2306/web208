@@ -10,6 +10,7 @@
     <thead>
       <tr>
         <th>#</th>
+        <th>Image</th>
         <th>Name</th>
         <th>Price</th>
         <th></th>
@@ -22,7 +23,9 @@
         <td>{{ product.name }}</td>
         <td>{{ product.price }}</td>
         <td>
-          <button class="btn btn-danger">Remove</button>
+          <button class="btn btn-danger" (click)="removeItem(product._id)">
+            Remove
+          </button>
         </td>
       </tr>
     </tbody>

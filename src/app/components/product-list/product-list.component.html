@@ -1,5 +1,11 @@
 <div class="container">
   <h1>Quản lý sản phẩm</h1>
+  <input type="text" (input)="getValue($event)" />
+  <div *ngIf="status">Tên sản phẩm: {{ productName }}</div>
+  <button class="btn btn-primary" (click)="changeStatus()">
+    Change Status
+  </button>
+  <hr />
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -10,11 +16,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>{{ products[0]._id }}</td>
-        <td width="50"><img width="50" src="{{ products[0].img }}" /></td>
-        <td>{{ products[0].name }}</td>
-        <td>{{ products[0].price }}</td>
+      <tr *ngFor="let product of products">
+        <td>{{ product._id }}</td>
+        <td width="50"><img width="50" [src]="product.img" /></td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
         <td>
           <button class="btn btn-danger">Remove</button>
         </td>

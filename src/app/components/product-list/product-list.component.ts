@@ -12,4 +12,14 @@ export class ProductListComponent {
     { _id: 2, name: "Product B", price: 300, img: "https://picsum.photos/200/200" },
     { _id: 3, name: "Product C", price: 400, img: "https://picsum.photos/200/200" },
   ]
+
+  status: boolean = false;
+  productName = ""
+
+  getValue(e: any) {
+    this.productName = e.target.value;
+  }
+  changeStatus() {
+    this.status = !this.status;
+  }
 }

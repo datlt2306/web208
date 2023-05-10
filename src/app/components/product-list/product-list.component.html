@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Quản lý sản phẩm</h1>
+
+    <table class="table-border table">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ products[0]._id }}</td>
+                <td>{{ products[0].name }}</td>
+                <td>{{ products[0].price }}</td>
+                <td>
+                    <button class="btn btn-danger">Xóa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

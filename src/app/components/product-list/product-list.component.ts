@@ -12,4 +12,10 @@ export class ProductListComponent {
     { _id: 2, name: 'Product 2', price: 200, img: "https://picsum.photos/200/200" },
     { _id: 3, name: 'Product 3', price: 300, img: "https://picsum.photos/200/200" },
   ]
+
+  myName: string = "";
+
+  setValue() {
+    this.myName = "Le Trong Dat";
+  }
 }

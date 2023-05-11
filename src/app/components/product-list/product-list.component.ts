@@ -23,4 +23,8 @@ export class ProductListComponent {
   setValue(e: any) {
     this.valueInput = e.target.value;
   }
+
+  removeItem(id: any) {
+    this.products = this.products.filter((item) => item._id !== id);
+  }
 }

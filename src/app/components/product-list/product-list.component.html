@@ -6,6 +6,7 @@
   <hr />
   <input type="text" (input)="setValue($event)" />
   {{ valueInput }}
+
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -16,14 +17,16 @@
         <th></th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>{{ products[0]._id }}</td>
-        <td><img src="{{ products[0].img }}" /></td>
-        <td>{{ products[0].name }}</td>
-        <td>{{ products[0].price }}</td>
+    <tbody *ngIf="products && products.length">
+      <tr *ngFor="let product of products; index as i">
+        <td>{{ i + 1 }}</td>
+        <td><img src="{{ product.img }}" /></td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
         <td>
-          <button class="btn btn-danger">xóa</button>
+          <button class="btn btn-danger" (click)="removeItem(product._id)">
+            xóa
+          </button>
         </td>
       </tr>
     </tbody>

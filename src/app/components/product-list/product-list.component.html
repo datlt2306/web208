@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Quản lý sản phẩm</h1>
+    <h1>{{ title }}</h1>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -12,10 +12,10 @@
         </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td><img src="" /></td>
-                <td>Sản phẩm A</td>
-                <td>200</td>
+                <td>{{ products[0]._id }}</td>
+                <td><img [src]="products[0].img" /></td>
+                <td>{{ products[0].name }}</td>
+                <td>{{ products[0].price }}</td>
                 <td>
                     <button class="btn btn-danger">Xóa</button>
                 </td>

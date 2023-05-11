@@ -15,14 +15,19 @@
                 <th></th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Ảnh</td>
-                <td>Sản phẩm A</td>
-                <td>200</td>
+        <tbody *ngIf="products && products.length">
+            <tr *ngFor="let product of products; index as i">
+                <td>{{ i + 1 }}</td>
+                <td><img src="{{ product.img }}" /></td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
                 <td>
-                    <button class="btn btn-danger">Xóa</button>
+                    <button
+                        class="btn btn-danger"
+                        (click)="removeItem(product._id)"
+                    >
+                        Xóa
+                    </button>
                 </td>
             </tr>
         </tbody>

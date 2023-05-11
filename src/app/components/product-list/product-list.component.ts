@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
     styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent {
-    title = "Quản lý sản phẩm"
+    title = "Quản lý sản phẩm";
+    status: boolean = false;
+
+    handleClick() {
+        this.status = !this.status;
+    }
+
+    setValue(e: any) {
+        this.title = e.target.value
+    }
 }

@@ -1,5 +1,12 @@
 <div class="container">
     <h1>{{ title }}</h1>
+
+    <input type="text" (input)="setValue($event)" />
+    {{ valueInput }}
+    <hr />
+    {{ status ? "Đã bật" : "Đã tắt" }}
+    <button (click)="toggle()">Toggled</button>
+    <hr />
     <table class="table table-bordered">
         <thead>
             <tr>

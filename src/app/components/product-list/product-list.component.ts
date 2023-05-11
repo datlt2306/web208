@@ -8,8 +8,19 @@ import { IProduct } from 'src/app/interfaces/Product';
 })
 export class ProductListComponent {
   title = 'Quản lý sản phẩm';
+  status: boolean = false;
+  valueInput: string = "";
+
+
   products: IProduct[] = [
     { _id: 1, name: "Sản phẩm A", price: 1000, img: "https://picsum.photos/200/200" },
     { _id: 2, name: "Sản phẩm B", price: 2000, img: "https://picsum.photos/200/200" },
   ]
+
+  toggle() {
+    this.status = !this.status;
+  }
+  setValue(e: any) {
+    this.valueInput = e.target.value;
+  }
 }

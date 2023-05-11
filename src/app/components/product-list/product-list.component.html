@@ -4,9 +4,10 @@
     <input type="text" (input)="setValue($event)" />
     {{ valueInput }}
     <hr />
-    {{ status ? "Đã bật" : "Đã tắt" }}
+    <div *ngIf="status">Hiển thị</div>
     <button (click)="toggle()">Toggled</button>
     <hr />
+
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -18,11 +19,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>{{ products[0]._id }}</td>
-                <td><img [src]="products[0].img" /></td>
-                <td>{{ products[0].name }}</td>
-                <td>{{ products[0].price }}</td>
+            <tr *ngFor="let product of products; index as i">
+                <td>{{ i + 1 }}</td>
+                <td><img [src]="product.img" /></td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
                 <td>
                     <button class="btn btn-danger">Xóa</button>
                 </td>

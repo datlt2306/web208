@@ -1,0 +1,9 @@
+<td>{{ index + 1 }}</td>
+<td width="50"><img width="50" [src]="product.img" /></td>
+<td>{{ product.name }}</td>
+<td>{{ product.price }}</td>
+<td>
+  <button class="btn btn-danger" (click)="removeItem(product._id)">
+    Remove
+  </button>
+</td>

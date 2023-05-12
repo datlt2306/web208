@@ -27,9 +27,4 @@ export class ProductListComponent {
   removeItem(id: any) {
     this.products = this.products.filter(item => item._id !== id)
   }
-
-  getInfo(product: IProduct) {
-    console.log(product)
-    this.product = product;
-  }
 }

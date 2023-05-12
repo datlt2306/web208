@@ -7,10 +7,10 @@ import { IProduct } from 'src/app/interfaces/product';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent {
-  @Input() data!: IProduct;
+  @Input('data') product!: IProduct;
 }
 
 
-// function ProductDetail(props){
-//   props.data
+// function ProductDetail({ data: item }) {
+//   item
 // }

@@ -17,23 +17,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products; index as i">
-        <td>{{ i + 1 }}</td>
-        <td width="50"><img width="50" [src]="product.img" /></td>
-        <td>{{ product.name }}</td>
-        <td>{{ product.price }}</td>
-        <td>
-          <button class="btn btn-danger" (click)="removeItem(product._id)">
-            Remove
-          </button>
-          <button (click)="getInfo(product)">Detail</button>
-        </td>
-      </tr>
+      <tr
+        app-product-item
+        *ngFor="let product of products; let i = index"
+        [product]="product"
+        [index]="i"
+        (onRemove)="removeItem($event)"
+      ></tr>
     </tbody>
   </table>
 </div>
 <hr />
-<h2>Detail</h2>
-<app-product-detail [data]="product"></app-product-detail>
-<!-- const [product, setProduct] -->
-<!-- <Component data={product} /> -->

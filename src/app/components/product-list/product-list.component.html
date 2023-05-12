@@ -26,8 +26,14 @@
           <button class="btn btn-danger" (click)="removeItem(product._id)">
             Remove
           </button>
+          <button (click)="getInfo(product)">Detail</button>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
+<hr />
+<h2>Detail</h2>
+<app-product-detail [data]="product"></app-product-detail>
+<!-- const [product, setProduct] -->
+<!-- <Component data={product} /> -->

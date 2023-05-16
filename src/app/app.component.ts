@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IProduct } from './interfaces/Product';
 
 @Component({
   selector: 'app-root', // định nghĩa element
@@ -6,16 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular';
-  myName: string = "Le Trong Dat";
-  myAge: number = 20;
-  myStatus: boolean = true;
-  myInfo: { name: string, age: number } = {
-    name: "Le Trong Dat",
-    age: 20
-  };
+  products: IProduct[] = [
+    { _id: 1, name: "Sản phẩm A", price: 200, img: "Ảnh" },
+    { _id: 2, name: "Sản phẩm B", price: 300, img: "Ảnh" }
+  ]
 
-  showInfo(name: string) {
-    return `My name is ${name ? name : this.myName} and I'm ${this.myAge} years old`;
+  onHandleRemove(id: any) {
+    const confirm = window.confirm('Mày chắc chắn muốn xóa chứ?');
+    if (confirm) {
+      this.products = this.products.filter(item => item._id !== id);
+    }
   }
 }

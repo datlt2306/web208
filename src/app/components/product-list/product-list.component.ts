@@ -1,6 +1,7 @@
 import { EventEmitter } from '@angular/core';
 import { Component, Input, Output } from '@angular/core';
 import { IProduct } from 'src/app/interfaces/Product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,11 +9,16 @@ import { IProduct } from 'src/app/interfaces/Product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent {
-  @Input() products: IProduct[] = [];
-  @Output() onRemove = new EventEmitter<any>();
+  products: IProduct[] = [];
+  constructor(private productService: ProductService) {
+  }
+  ngOnInit() {
+    this.productService.getProducts().subscribe((data) => {
+      this.products = data;
+    })
+  }
   removeItem(id: any) {
-    this.onRemove.emit(id)
-
+    // this.onRemove.emit(id)
   }
 }
 

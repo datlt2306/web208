@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IProduct } from 'src/app/interfaces/product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -7,14 +8,19 @@ import { IProduct } from 'src/app/interfaces/product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent {
-  products: IProduct[] = [
-    { _id: 1, name: "Product A", price: 200, img: "https://picsum.photos/200/200" },
-    { _id: 2, name: "Product B", price: 300, img: "https://picsum.photos/200/200" },
-    { _id: 3, name: "Product C", price: 400, img: "https://picsum.photos/200/200" },
-  ]
-
   status: boolean = false;
   productName = "";
+  products: IProduct[] = []
+
+  constructor(private productService: ProductService) {
+    this.productService.getProducts().subscribe(data => {
+      this.products = data
+    })
+
+    this.productService.getProduct(1).subscribe(data => {
+      console.log(data);
+    })
+  }
 
   product!: IProduct;
 
@@ -25,6 +31,6 @@ export class ProductListComponent {
     this.status = !this.status;
   }
   removeItem(id: any) {
-    this.products = this.products.filter(item => item._id !== id)
+    // this.products = this.products.filter(item => item._id !== id)
   }
 }

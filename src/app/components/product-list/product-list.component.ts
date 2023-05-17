@@ -16,10 +16,6 @@ export class ProductListComponent {
     this.productService.getProducts().subscribe(data => {
       this.products = data
     })
-
-    this.productService.getProduct(1).subscribe(data => {
-      console.log(data);
-    })
   }
 
   product!: IProduct;
@@ -31,6 +27,11 @@ export class ProductListComponent {
     this.status = !this.status;
   }
   removeItem(id: any) {
-    // this.products = this.products.filter(item => item._id !== id)
+    this.productService.deleteProduct(id).subscribe(() => {
+      this.products = this.products.filter(item => item.id !== id)
+    }, (error) => {
+      console.log(error.message)
+    })
+
   }
 }

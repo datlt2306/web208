@@ -4,6 +4,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -11,9 +12,10 @@ const routes: Routes = [
   {
     path: 'admin', component: LayoutAdminComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent }
+      { path: 'dashboard', component: DashboardComponent },
     ],
   },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

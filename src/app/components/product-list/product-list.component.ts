@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from 'src/app/interfaces/Product';
 
 @Component({
@@ -8,6 +8,7 @@ import { IProduct } from 'src/app/interfaces/Product';
 })
 export class ProductListComponent {
   @Input() products!: IProduct[]
+  @Output() onRemove = new EventEmitter<any>();
   myName: string = "";
 
   status: boolean = false
@@ -20,7 +21,7 @@ export class ProductListComponent {
   }
 
   removeItem(id: number) {
-    this.products = this.products.filter(product => product._id !== id)
+    this.onRemove.emit(id);
   }
 }
 
@@ -31,10 +32,11 @@ export class ProductListComponent {
 //   return <div>
 //     {
 //       products.map(product => product.name)
+// <button onClick={() => onRemove(product.id)}>Remove</button>
 //         < /div>
 //     }
 
 // App.js
 
-// <ProductList products={ state } />
+// <ProductList products={state} onRemove="onHandleRemove"/>
 // <app-product-list [products]="products" />

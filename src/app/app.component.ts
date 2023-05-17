@@ -12,4 +12,7 @@ export class AppComponent {
     { _id: 2, name: 'Product 2', price: 100, img: "https://picsum.photos/200/200" },
     { _id: 3, name: 'Product 3', price: 100, img: "https://picsum.photos/200/200" },
   ]
+  onHandleRemove(id: any) {
+    this.products = this.products.filter(product => product._id !== id)
+  }
 }

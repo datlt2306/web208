@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IProduct } from 'src/app/interfaces/Product';
 
 @Component({
@@ -7,12 +7,7 @@ import { IProduct } from 'src/app/interfaces/Product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent {
-  products: IProduct[] = [
-    { _id: 1, name: 'Product 1', price: 100, img: "https://picsum.photos/200/200" },
-    { _id: 2, name: 'Product 2', price: 200, img: "https://picsum.photos/200/200" },
-    { _id: 3, name: 'Product 3', price: 300, img: "https://picsum.photos/200/200" },
-  ]
-
+  @Input() products!: IProduct[]
   myName: string = "";
 
   status: boolean = false
@@ -28,3 +23,18 @@ export class ProductListComponent {
     this.products = this.products.filter(product => product._id !== id)
   }
 }
+
+
+
+// ProductList.js
+// function ProductList({ products, onRemove }) {
+//   return <div>
+//     {
+//       products.map(product => product.name)
+//         < /div>
+//     }
+
+// App.js
+
+// <ProductList products={ state } />
+// <app-product-list [products]="products" />

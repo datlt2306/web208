@@ -1,10 +1,17 @@
 <div class="container">
     <div class="row">
         <div class="col-4">
-            <aside>menu</aside>
+            <aside>
+                <ul>
+                    <li><a routerLink="dashboard">Dashboard</a></li>
+                    <li><a routerLink="product">Products</a></li>
+                </ul>
+            </aside>
         </div>
         <div class="col-8">
-            <main>Nội dung chính admin</main>
+            <main>
+                <router-outlet></router-outlet>
+            </main>
         </div>
     </div>
 </div>

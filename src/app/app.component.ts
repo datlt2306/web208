@@ -18,7 +18,6 @@ export class AppComponent {
 }
 
 
-
 // // ProductList.js
 // function ProductList({ products, onRemove }) {
 //     return (

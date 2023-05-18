@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IProduct } from 'src/app/interfaces/Product';
 
 @Component({
@@ -7,21 +7,16 @@ import { IProduct } from 'src/app/interfaces/Product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent {
-  title = 'Quản lý sản phẩm';
-  status: boolean = false;
-  valueInput: string = "";
-
-
-  products: IProduct[] = [
-    { _id: 1, name: "Sản phẩm A", price: 1000, img: "https://picsum.photos/200/200" },
-    { _id: 2, name: "Sản phẩm B", price: 2000, img: "https://picsum.photos/200/200" },
-  ]
+  @Input() products: IProduct[] = [];
+  // title = 'Quản lý sản phẩm';
+  // status: boolean = false;
+  // valueInput: string = "";
 
   toggle() {
-    this.status = !this.status;
+    // this.status = !this.status;
   }
   setValue(e: any) {
-    this.valueInput = e.target.value;
+    // this.valueInput = e.target.value;
   }
 
   removeItem(id: any) {

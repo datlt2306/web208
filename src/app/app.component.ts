@@ -1,30 +1,29 @@
 import { Component } from '@angular/core';
+import { IProduct } from './interfaces/Product';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular';
-  myName: string = 'Derek';
-  myAge: number = 30;
-  myStatus: boolean = true;
-  myInfo: { name: string, age: number } = {
-    name: "Derek",
-    age: 30
-  };
-  showInfo() {
-    return this.myAge + 10;
-  }
+    products: IProduct[] = [
+        { _id: 1, name: "Sản phẩm Ahihi", price: 1000, img: "https://picsum.photos/200/200" },
+        { _id: 2, name: "Sản phẩm B", price: 2000, img: "https://picsum.photos/200/200" },
+        { _id: 3, name: "Sản phẩm C", price: 3000, img: "https://picsum.photos/200/200" },
+    ]
 }
 
-// Logic, View, Stylesheet
-// .ts, .html, .scss
 
 
-// function HelloComponent(){
-
+// // ProductList.js
+// function ProductList({ products }) {
+//     return (
+//         <div>
+//         { products.map((item) => ()}
+//         < /div>
+//     )
 // }
 
-// <HelloComponent />
+// // App.js
+// <ProductList products={ array } />

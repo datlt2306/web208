@@ -1,0 +1,3 @@
+- Truyền dữ liệu giữa component: Input, Output
+- Routing: Nested Routing
+- Services trong angular

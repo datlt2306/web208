@@ -12,18 +12,22 @@ export class AppComponent {
         { _id: 2, name: "Sản phẩm B", price: 2000, img: "https://picsum.photos/200/200" },
         { _id: 3, name: "Sản phẩm C", price: 3000, img: "https://picsum.photos/200/200" },
     ]
+    onHandleRemove(id: any) {
+        this.products = this.products.filter((item) => item._id !== id);
+    }
 }
 
 
 
 // // ProductList.js
-// function ProductList({ products }) {
+// function ProductList({ products, onRemove }) {
 //     return (
 //         <div>
 //         { products.map((item) => ()}
+//  <button onClick={() => onRemove(item.id)}></button>
 //         < /div>
 //     )
 // }
 
 // // App.js
-// <ProductList products={ array } />
+// <ProductList products={ array } onRemove={onHandleRemove} />

@@ -14,3 +14,4 @@ export class ProductService {
     return this.http.get<IProduct[]>(`http://localhost:3000/products`)
   }
 }
+

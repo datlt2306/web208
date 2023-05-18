@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from 'src/app/interfaces/Product';
 
 @Component({
@@ -8,6 +8,7 @@ import { IProduct } from 'src/app/interfaces/Product';
 })
 export class ProductListComponent {
   @Input() products!: IProduct[]
+  @Output() onRemove = new EventEmitter<number>();
 
   title = 'Quản lý sản phẩm';
   status: boolean = false;
@@ -23,7 +24,7 @@ export class ProductListComponent {
     this.valueInput = e.target.value
   }
   removeItem(id: any) {
-    console.log(id);
-    // this.products = this.products.filter(item => item._id !== id);
+    this.onRemove.emit(id);
+
   }
 }

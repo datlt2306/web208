@@ -12,13 +12,18 @@ export class AppComponent {
         { _id: 2, name: "Product B", price: 300, img: "Anh" },
         { _id: 3, name: "Product C", price: 400, img: "Anh" }
     ]
+    onHandleRemove(id: any) {
+        this.products = this.products.filter(item => item._id !== id);
+    }
 }
 
 // logic, view, stylesheet
 // .ts, .html, .scss
 
 
-// function Component({products}){
-//   return {products.map}
+// function Component({products, onRemove}){
+//   return <button onClick={() => onRemove(id)}>
 // }
-// <Component products={products}/>
+
+// app.js
+// <Component products={products} onRemove={onHandleRemove}/>

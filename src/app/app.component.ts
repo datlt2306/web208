@@ -1,29 +1,24 @@
 import { Component } from '@angular/core';
+import { IProduct } from './interfaces/Product';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title: string = 'Angular';
-  myName: string = "Le Trong Dat";
-  myAge: number = 20;
-  myStatus: boolean = true;
-  myInfo: { name: string, age: number } = {
-    name: "Dat",
-    age: 20
-  };
-  showInfo() {
-    return this.myName + 'Đẹp trai';
-  }
+    products: IProduct[] = [
+        { _id: 1, name: "Product A", price: 200, img: "Anh" },
+        { _id: 2, name: "Product B", price: 300, img: "Anh" },
+        { _id: 3, name: "Product C", price: 400, img: "Anh" }
+    ]
 }
 
 // logic, view, stylesheet
 // .ts, .html, .scss
 
 
-// function Component(){
-//   return JSX
+// function Component({products}){
+//   return {products.map}
 // }
-// <Component />
+// <Component products={products}/>

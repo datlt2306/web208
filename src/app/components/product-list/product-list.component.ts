@@ -11,6 +11,7 @@ export class ProductListComponent {
   status: boolean = false;
   productName = "";
   products: IProduct[] = []
+  product!: IProduct;
 
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(data => {
@@ -18,7 +19,7 @@ export class ProductListComponent {
     })
   }
 
-  product!: IProduct;
+
 
   getValue(e: any) {
     this.productName = e.target.value;

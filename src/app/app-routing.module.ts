@@ -6,15 +6,19 @@ import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.compon
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ManageProductComponent } from './pages/admin/manage-product/manage-product.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'products', component: ProductListComponent },
+  { path: 'product', component: ProductListComponent },
+  { path: 'product/:id', component: ProductDetailComponent },
   {
     path: 'admin', component: LayoutAdminComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'product', component: ManageProductComponent }
+      { path: 'product', component: ManageProductComponent },
+      { path: 'product/:id/edit', component: ProductEditComponent }
     ],
   },
   { path: '**', component: PageNotFoundComponent }

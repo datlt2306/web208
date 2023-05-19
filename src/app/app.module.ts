@@ -12,6 +12,7 @@ import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.compon
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ManageProductComponent } from './pages/admin/manage-product/manage-product.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ManageProductComponent } from './pages/admin/manage-product/manage-prod
     DashboardComponent,
     PageNotFoundComponent,
     ManageProductComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,

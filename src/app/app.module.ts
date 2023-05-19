@@ -12,6 +12,7 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { AdminProductComponent } from './pages/admin/admin-product/admin-product.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 // decorators
 @NgModule({
@@ -25,6 +26,7 @@ import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component
     AdminProductComponent,
     AdminLayoutComponent,
     BaseLayoutComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,

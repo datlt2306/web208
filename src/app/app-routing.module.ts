@@ -8,12 +8,14 @@ import { AboutComponent } from './pages/about/about.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { AdminProductComponent } from './pages/admin/admin-product/admin-product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 const routes: Routes = [
   {
     path: '', component: BaseLayoutComponent, children: [
       { path: '', component: HomePageComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'product/:id', component: ProductDetailComponent }
     ]
   },
   {

@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ManageProductComponent } from './pages/admin/manage-product/manage-product.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'product', component: ManageProductComponent },
+      { path: "product/add", component: ProductAddComponent },
       { path: 'product/:id/edit', component: ProductEditComponent }
     ],
   },

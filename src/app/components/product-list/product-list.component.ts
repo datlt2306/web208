@@ -16,7 +16,7 @@ export class ProductListComponent {
   status: boolean = false;
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(data => {
-      console.log(data)
+      this.products = data
     })
   }
 
@@ -28,6 +28,9 @@ export class ProductListComponent {
   }
 
   removeItem(id: number) {
+    this.productService.deleteProduct(id).subscribe(() => {
+      this.products = this.products.filter(product => product.id !== id)
+    })
     // this.onRemove.emit(id);
   }
 }

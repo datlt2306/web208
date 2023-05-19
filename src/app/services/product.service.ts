@@ -13,4 +13,7 @@ export class ProductService {
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>('http://localhost:3000/products')
   }
+  deleteProduct(id: number): Observable<IProduct> {
+    return this.http.delete<IProduct>(`http://localhost:3000/products/${id}`)
+  }
 }

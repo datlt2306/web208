@@ -7,6 +7,7 @@ import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component
 import { AboutComponent } from './pages/about/about.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { AdminProductComponent } from './pages/admin/admin-product/admin-product.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
     path: 'admin', component: AdminLayoutComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'product', component: AdminProductComponent }
+      { path: 'product', component: ProductListComponent }
     ]
   },
   { path: '**', component: PageNotFoundComponent }
@@ -32,3 +33,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

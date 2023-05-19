@@ -11,6 +11,12 @@
       "name": "Product C",
       "price": 200,
       "img": "https://picsum.photos/200/200"
+    },
+    {
+      "name": "Sản phẩm C",
+      "price": 400,
+      "img": "anh",
+      "id": 4
     }
   ]
 }

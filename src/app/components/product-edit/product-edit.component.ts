@@ -9,7 +9,11 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-edit.component.scss']
 })
 export class ProductEditComponent {
-  product!: IProduct;
+  product: IProduct = {
+    name: "",
+    price: 0,
+    img: ""
+  };
   constructor(private productService: ProductService,
     private route: ActivatedRoute
   ) {
@@ -20,5 +24,10 @@ export class ProductEditComponent {
       })
     })
 
+  }
+  onHandleEdit() {
+    this.productService.updateProduct(this.product).subscribe(data => {
+      console.log(data)
+    })
   }
 }

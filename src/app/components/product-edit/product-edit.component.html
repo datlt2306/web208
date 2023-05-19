@@ -1,4 +1,20 @@
-<!-- directive -> thuộc tính mở rộng phần tử -->
-<div *ngIf="product">
-  <h2>{{ product.name }}</h2>
-</div>
+<form (ngSubmit)="onHandleEdit()">
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="Tên sản phẩm"
+      [(ngModel)]="product.name"
+      name="name"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="number"
+      placeholder="Giá sản phẩm"
+      [(ngModel)]="product.price"
+      name="price"
+    />
+  </div>
+  <div *ngIf="product">{{ product.name }} - {{ product.price }}</div>
+  <button type="submit">Submit</button>
+</form>

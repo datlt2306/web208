@@ -13,6 +13,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { AdminProductComponent } from './pages/admin/admin-product/admin-product.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 // decorator typescript
 @NgModule({
@@ -26,7 +27,8 @@ import { AdminProductComponent } from './pages/admin/admin-product/admin-product
     ProductPageComponent,
     PageNotFoundComponent,
     DashboardComponent,
-    AdminProductComponent
+    AdminProductComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

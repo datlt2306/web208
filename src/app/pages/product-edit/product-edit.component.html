@@ -1,1 +1,20 @@
-<p>product-edit works!</p>
+<form (ngSubmit)="onHandleSubmit()">
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="product.name"
+      name="name"
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="product.price"
+      name="price"
+    />
+  </div>
+  {{ product | json }}
+  <button type="submit">Sửa</button>
+</form>

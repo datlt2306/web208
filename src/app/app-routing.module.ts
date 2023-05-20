@@ -11,6 +11,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductAddComponent } from './pages/admin/product-add/product-add.component';
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,7 @@ const routes: Routes = [
     path: "admin", component: AdminLayoutComponent, children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
       { path: "dashboard", component: DashboardComponent },
-      { path: "product", component: AdminProductComponent },
+      { path: "product", component: ProductListComponent },
       { path: "product/add", component: ProductAddComponent },
       { path: "product/:id/edit", component: ProductEditComponent },
     ]

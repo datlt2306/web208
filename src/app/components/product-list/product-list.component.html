@@ -17,11 +17,14 @@
                 <td>{{ product.price }}</td>
                 <td>
                     <button
-                        class="btn btn-danger"
+                        class="btn btn-danger mr-1"
                         (click)="removeItem(product.id)"
                     >
                         Xóa
                     </button>
+                    <a routerLink="/admin/product/{{ product.id }}/edit"
+                        >Cập nhật</a
+                    >
                 </td>
             </tr>
         </tbody>

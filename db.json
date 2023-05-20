@@ -11,6 +11,12 @@
       "name": "Product C",
       "price": 400,
       "img": "anh"
+    },
+    {
+      "name": "Sản phảm demo 1 update",
+      "price": 500,
+      "img": "ânhr",
+      "id": 4
     }
   ]
 }

@@ -11,6 +11,11 @@
       "name": "Product C",
       "price": 200,
       "img": "https://picsum.photos/200/200"
+    },
+    {
+      "name": "Sản phẩm Demo 1",
+      "price": 500,
+      "id": "UqwuTPp"
     }
   ]
 }

@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { AdminProductComponent } from './pages/admin/admin-product/admin-product.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 // decorators
 @NgModule({
@@ -28,6 +29,7 @@ import { AdminProductComponent } from './pages/admin/admin-product/admin-product
     HomePageComponent,
     DashboardComponent,
     AdminProductComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,

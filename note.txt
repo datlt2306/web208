@@ -1,3 +1,4 @@
 - Truyền data giữa các component: Input, Output
 - Routing: website hoặc admin
 - Services
+- Đoạn này sửa

@@ -35,6 +35,11 @@
       "name": "Product 6",
       "price": 600,
       "description": "This is product 6"
+    },
+    {
+      "name": "Sản phẩm 7",
+      "price": "500",
+      "id": 7
     }
   ]
 }

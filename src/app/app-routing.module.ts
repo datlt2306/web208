@@ -9,6 +9,7 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AdminProductComponent } from './pages/admin/admin-product/admin-product.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { ProductAddComponent } from './pages/product-add/product-add.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
     path: 'admin', component: AdminLayoutComponent, children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
       { path: "dashboard", component: DashboardComponent },
-      { path: "product", component: ProductListComponent }
+      { path: "product", component: ProductListComponent },
+      { path: "product/add", component: ProductAddComponent }
     ]
   },
   { path: "**", component: PageNotFoundComponent }

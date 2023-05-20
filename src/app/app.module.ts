@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { AdminProductComponent } from './pages/admin/admin-product/admin-product.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { ProductAddComponent } from './pages/product-add/product-add.component';
+import { ProductEditComponent } from './pages/product-edit/product-edit.component';
 
 // decorators
 @NgModule({
@@ -30,11 +33,14 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
     DashboardComponent,
     AdminProductComponent,
     ProductDetailComponent,
+    ProductAddComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

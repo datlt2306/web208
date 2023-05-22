@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-product-add',
@@ -21,11 +21,16 @@ export class ProductAddComponent {
   //     console.log(data)
   //   }, error => console.log(error.message))
   // }
-  productForm = new FormGroup({
-    name: new FormControl(''),
-    price: new FormControl(0),
+  constructor(private formBuilder: FormBuilder) {
+
+  }
+  productForm = this.formBuilder.group({
+    name: [''],
+    price: [0]
   })
   onHandleSubmit() {
-    console.log(this.productForm.value)
+    if (this.productForm.valid) {
+      console.log(this.productForm.value)
+    }
   }
 }

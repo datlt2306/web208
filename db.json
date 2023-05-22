@@ -16,6 +16,11 @@
       "name": "sản phẩm mới vừa thêm update",
       "price": 300,
       "id": 4
+    },
+    {
+      "name": "san pham 999",
+      "price": 321312,
+      "id": 5
     }
   ]
 }

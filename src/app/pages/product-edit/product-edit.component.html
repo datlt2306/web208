@@ -1,1 +1,16 @@
-<p>product-edit works!</p>
+<form (ngSubmit)="onHandleSubmit()">
+    <input
+        type="text"
+        name="name"
+        [(ngModel)]="product.name"
+        placeholder="Tên sản phẩm"
+    />
+    <input
+        type="number"
+        name="price"
+        [(ngModel)]="product.price"
+        placeholder="Giá sản phẩm"
+    />
+    <button>Thêm sản phẩm</button>
+    {{ product | json }}
+</form>

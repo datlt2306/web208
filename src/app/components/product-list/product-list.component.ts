@@ -16,7 +16,7 @@ export class ProductListComponent {
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(data => {
       this.products = data
-    })
+    }, error => console.log(error))
   }
 
 

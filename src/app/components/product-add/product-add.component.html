@@ -1,4 +1,4 @@
-<form (ngSubmit)="onHandleAdd()">
+<!-- <form (ngSubmit)="onHandleAdd()">
   <div class="form-group">
     <input
       type="text"
@@ -17,4 +17,9 @@
   </div>
   <div *ngIf="product">{{ product.name }} - {{ product.price }}</div>
   <button type="submit">Submit</button>
+</form> -->
+<form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
+  <input type="text" formControlName="name" />
+  <input type="text" formControlName="price" />
+  <button type="submit" [disabled]="!productForm.valid">Submit</button>
 </form>

@@ -14,11 +14,12 @@ export class ProductEditComponent {
     price: 0,
     img: ""
   };
-  constructor(private productService: ProductService,
+  constructor(
+    private productService: ProductService,
     private route: ActivatedRoute
   ) {
-    this.route.paramMap.subscribe(params => {
-      const id = params.get('id');
+    this.route.paramMap.subscribe(param => {
+      const id = param.get('id');
       this.productService.getProduct(id).subscribe(product => {
         this.product = product;
       })

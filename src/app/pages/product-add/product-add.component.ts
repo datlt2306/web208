@@ -8,6 +8,9 @@ import { Validators, FormBuilder } from '@angular/forms';
   styleUrls: ['./product-add.component.scss']
 })
 export class ProductAddComponent {
+
+
+
   productForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(4)]],
     price: [0]

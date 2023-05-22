@@ -1,16 +1,6 @@
-<form (ngSubmit)="onHandleSubmit()">
-    <input
-        type="text"
-        name="name"
-        [(ngModel)]="product.name"
-        placeholder="Tên sản phẩm"
-    />
-    <input
-        type="number"
-        name="price"
-        [(ngModel)]="product.price"
-        placeholder="Giá sản phẩm"
-    />
+<form (ngSubmit)="onHandleSubmit()" [formGroup]="productForm">
+    <input type="text" formControlName="name" placeholder="Tên sản phẩm" />
+    <input type="number" formControlName="price" placeholder="Giá sản phẩm" />
     <button>Thêm sản phẩm</button>
-    {{ product | json }}
+    {{ productForm | json }}
 </form>

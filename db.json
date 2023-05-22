@@ -11,6 +11,11 @@
       "name": "Product C",
       "price": 400,
       "img": ""
+    },
+    {
+      "name": "sản phẩm mới vừa thêm",
+      "price": 300,
+      "id": 4
     }
   ]
 }

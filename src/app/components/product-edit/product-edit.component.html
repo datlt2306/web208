@@ -1,20 +1,9 @@
-<form (ngSubmit)="onHandleEdit()">
+<form (ngSubmit)="onHandleEdit()" [formGroup]="productForm">
   <div class="form-group">
-    <input
-      type="text"
-      placeholder="Tên sản phẩm"
-      [(ngModel)]="product.name"
-      name="name"
-    />
+    <input type="text" placeholder="Tên sản phẩm" formControlName="name" />
   </div>
   <div class="form-group">
-    <input
-      type="number"
-      placeholder="Giá sản phẩm"
-      [(ngModel)]="product.price"
-      name="price"
-    />
+    <input type="number" placeholder="Giá sản phẩm" formControlName="price" />
   </div>
-  <div *ngIf="product">{{ product.name }} - {{ product.price }}</div>
   <button type="submit">Submit</button>
 </form>

@@ -12,6 +12,7 @@ export class ProductDetailComponent {
     name: "",
     price: 0
   }
+  category: any = {}
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService
@@ -22,6 +23,17 @@ export class ProductDetailComponent {
       this.productService.getProductById(id).subscribe(product => {
         this.product = product;
       })
+    })
+
+  }
+  ngOnInit() {
+    this.getCategory();
+  }
+
+
+  getCategory() {
+    this.productService.relatedProducts(1).subscribe(data => {
+      this.category = data;
     })
   }
 }

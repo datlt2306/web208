@@ -1,1 +1,7 @@
 <p *ngIf="product">{{ product.name }}</p>
+<div>
+    <h2>Related Product</h2>
+    <div *ngFor="let itemRelated of category.products">
+        <div>{{ itemRelated.name }}</div>
+    </div>
+</div>

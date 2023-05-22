@@ -25,5 +25,8 @@ export class ProductService {
   deleteProduct(id: number): Observable<IProduct> {
     return this.http.delete<IProduct>(`http://localhost:3000/products/${id}`)
   }
+  relatedProducts(categoryId: number): Observable<any> {
+    return this.http.get<any>(`http://localhost:3000/categories/${categoryId}?_embed=products`)
+  }
 }
 

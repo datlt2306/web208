@@ -1,4 +1,4 @@
-<form (ngSubmit)="onHandleAdd()">
+<!-- <form (ngSubmit)="onHandleAdd()">
     <div class="mb-3">
         <input
             type="text"
@@ -30,4 +30,26 @@
     <button type="submit" class="btn btn-primary bg-block btn-lg">
         Thêm sản phẩm
     </button>
+</form> -->
+<form (ngSubmit)="onHandleSubmit()" [formGroup]="productForm">
+    <input type="text" formControlName="name" />
+    <input type="text" formControlName="price" />
+
+    <button type="submit">Submit</button>
 </form>
+
+<!-- <form>
+    <div class="mb-3">
+        <input type="text" placeholder="Tên" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <input type="number" placeholder="Giá" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <input type="text" placeholder="Ảnh" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary bg-block btn-lg">
+        Thêm sản phẩm
+    </button>
+</form> -->

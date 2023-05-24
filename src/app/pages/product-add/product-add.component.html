@@ -35,7 +35,9 @@
     <input type="text" formControlName="name" />
     <input type="text" formControlName="price" />
 
-    <button type="submit">Submit</button>
+    <button type="submit" [disabled]="!productForm.valid">Submit</button>
+
+    {{ productForm.value | json }}
 </form>
 
 <!-- <form>

@@ -1,9 +1,8 @@
-<form (ngSubmit)="onHandleUpdate()">
+<form (ngSubmit)="onHandleUpdate()" [formGroup]="productForm">
     <div class="mb-3">
         <input
             type="text"
-            [(ngModel)]="product.name"
-            name="name"
+            formControlName="name"
             placeholder="Tên"
             class="form-control"
         />
@@ -11,8 +10,7 @@
     <div class="mb-3">
         <input
             type="number"
-            [(ngModel)]="product.price"
-            name="price"
+            formControlName="price"
             placeholder="Giá"
             class="form-control"
         />
@@ -20,8 +18,7 @@
     <div class="mb-3">
         <input
             type="text"
-            [(ngModel)]="product.img"
-            name="img"
+            formControlName="img"
             placeholder="Ảnh"
             class="form-control"
         />

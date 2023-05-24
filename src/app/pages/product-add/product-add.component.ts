@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct } from 'src/app/interfaces/Product';
 import { ProductService } from 'src/app/services/product.service';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product-add',
@@ -24,7 +24,7 @@ export class ProductAddComponent {
   //   })
   // }
   productForm = this.formBuilder.group({
-    name: [''],
+    name: ['', [Validators.required, Validators.minLength(4)]],
     price: [0],
   })
   constructor(
@@ -32,6 +32,15 @@ export class ProductAddComponent {
     private formBuilder: FormBuilder) { }
 
   onHandleSubmit() {
-    console.log(this.productForm.value)
+    if (this.productForm.valid) {
+      const product: IProduct = {
+        name: this.productForm.value.name || "",
+        price: this.productForm.value.price || 0,
+      }
+      this.productService.addProduct(product).subscribe(product => {
+        console.log('Thành công', product)
+      })
+    }
+
   }
 }

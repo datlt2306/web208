@@ -1,4 +1,4 @@
-<form (ngSubmit)="onHandleSubmit()">
+<!-- <form (ngSubmit)="onHandleSubmit()">
     <div class="mb-3">
         <input
             type="text"
@@ -19,4 +19,9 @@
     </div>
     {{ product | json }}
     <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+</form> -->
+<form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
+    <input type="text" formControlName="name" />
+    <input type="text" formControlName="price" />
+    <button type="submit" [disabled]="!productForm.valid">Submit</button>
 </form>

@@ -1,28 +1,37 @@
 {
-    "products": [
-        {
-            "id": "3",
-            "name": "Product B",
-            "price": 200,
-            "img": "https://picsum.photos/200/200",
-            "categoryId": 1
-        },
-        {
-            "id": "4",
-            "name": "Product C update",
-            "price": 200,
-            "img": "https://picsum.photos/200/200",
-            "categoryId": 1
-        },
-        {
-            "name": "Sản phẩm Demo 1",
-            "price": 500,
-            "id": "UqwuTPp",
-            "categoryId": 2
-        }
-    ],
-    "categories": [
-        { "id": 1, "name": "Danh A" },
-        { "id": 2, "name": "Danh B" }
-    ]
+  "products": [
+    {
+      "id": "3",
+      "name": "Product B",
+      "price": 200,
+      "img": "https://picsum.photos/200/200",
+      "categoryId": 1
+    },
+    {
+      "id": "4",
+      "name": "Product C update lần 2",
+      "price": 200
+    },
+    {
+      "name": "Sản phẩm Demo 1",
+      "price": 500,
+      "id": "UqwuTPp",
+      "categoryId": 2
+    },
+    {
+      "name": "Sản phẩm demo 1111",
+      "price": "5000",
+      "id": "OUt9f0o"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Danh A"
+    },
+    {
+      "id": 2,
+      "name": "Danh B"
+    }
+  ]
 }

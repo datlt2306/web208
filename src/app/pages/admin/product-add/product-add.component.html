@@ -23,5 +23,7 @@
 <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
     <input type="text" formControlName="name" />
     <input type="text" formControlName="price" />
+    <input type="file" (change)="onFileSelected($event)" />
+
     <button type="submit" [disabled]="!productForm.valid">Submit</button>
 </form>

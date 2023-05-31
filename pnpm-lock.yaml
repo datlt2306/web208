@@ -20,6 +20,7 @@ specifiers:
   karma-coverage: ~2.2.0
   karma-jasmine: ~5.1.0
   karma-jasmine-html-reporter: ~2.0.0
+  ng2-file-upload: ^3.0.0
   rxjs: ~7.8.0
   tslib: ^2.3.0
   typescript: ~4.9.4
@@ -35,6 +36,7 @@ dependencies:
   '@angular/platform-browser-dynamic': 15.2.9_3gutb3tlgpthkmyhcebhmqcd4u
   '@angular/router': 15.2.9_fn7m5m2aaraoyaufnj5zsfszqq
   bootstrap: 5.2.3
+  ng2-file-upload: 3.0.0_saasvbjwcyvrg46rivfba7ybci
   rxjs: 7.8.1
   tslib: 2.5.0
   zone.js: 0.12.0
@@ -4999,6 +5001,17 @@ packages:
   /neo-async/2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
+
+  /ng2-file-upload/3.0.0_saasvbjwcyvrg46rivfba7ybci:
+    resolution: {integrity: sha512-Xz7Pa9bC9loZ7eu1EzdAyPb3dpLbGe1G1nHgf+YUvtqQepxdQ3OBtd04Jbg3yx8r+nhi8tKGmdajsBAkeA87rA==}
+    peerDependencies:
+      '@angular/common': ^14.0.0
+      '@angular/core': ^14.0.0
+    dependencies:
+      '@angular/common': 15.2.9_ptit4znhzkqjjm7vgqsryxfu3i
+      '@angular/core': 15.2.9_rxjs@7.8.1+zone.js@0.12.0
+      tslib: 2.5.0
+    dev: false
 
   /nice-napi/1.0.2:
     resolution: {integrity: sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA==}

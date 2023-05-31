@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IProduct } from '../interfaces/Product';
+import { finalize } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'

@@ -9,11 +9,15 @@ import { ManageProductComponent } from './pages/admin/manage-product/manage-prod
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'product', component: ProductListComponent },
   { path: 'product/:id', component: ProductDetailComponent },
+  { path: "signup", component: SignupComponent },
+  { path: "signin", component: SigninComponent },
   {
     path: 'admin', component: LayoutAdminComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

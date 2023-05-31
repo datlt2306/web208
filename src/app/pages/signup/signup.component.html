@@ -1,0 +1,41 @@
+<form [formGroup]="formSignup" (ngSubmit)="onHandleSubmit()">
+  <input type="text" placeholder="Email" formControlName="email" />
+  <div
+    *ngIf="
+      formSignup.get('email')?.hasError('required') &&
+      (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)
+    "
+  >
+    Email is Required
+  </div>
+  <div
+    *ngIf="
+      formSignup.get('email')?.hasError('email') &&
+      (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)
+    "
+  >
+    Invalid email
+  </div>
+  <input type="password" placeholder="Password" formControlName="password" />
+  <div
+    *ngIf="
+      formSignup.get('password')?.hasError('required') &&
+      (formSignup.get('password')?.touched || formSignup.get('email')?.dirty)
+    "
+  ></div>
+  <input
+    type="password"
+    placeholder="Confirm Password"
+    formControlName="confirmPassword"
+  />
+  <div
+    *ngIf="
+      formSignup.hasError('misMatch') &&
+      (formSignup.get('confirmPassword')?.touched ||
+        formSignup.get('confirmPassword')?.dirty)
+    "
+  >
+    Password không trùng nhau
+  </div>
+  <button>Đăng ký</button>
+</form>

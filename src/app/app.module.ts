@@ -15,6 +15,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ManageProductComponent } from './pages/admin/manage-product/manage-product.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
     ManageProductComponent,
     ProductEditComponent,
     ProductAddComponent,
+    SigninComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

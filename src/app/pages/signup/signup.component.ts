@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
+  submitted: boolean = false;
   formSignup = this.fb.group({
     name: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
@@ -27,6 +28,7 @@ export class SignupComponent {
   }
 
   onHandleSubmit() {
+    this.submitted = true;
     if (this.formSignup.valid) {
       this.auth.signup(this.formSignup.value).subscribe(data => {
         console.log(data);

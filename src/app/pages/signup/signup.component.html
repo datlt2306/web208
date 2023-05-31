@@ -10,13 +10,7 @@
                 class="form-control"
             />
         </div>
-        <div
-            *ngIf="
-                formSignup.get('name')?.hasError('required') &&
-                (formSignup.get('name')?.touched ||
-                    formSignup.get('name')?.dirty)
-            "
-        >
+        <div *ngIf="formSignup.get('name')?.hasError('required') && submitted">
             Name is Required
         </div>
         <div class="mb-3">
@@ -29,22 +23,10 @@
                 class="form-control"
             />
         </div>
-        <div
-            *ngIf="
-                formSignup.get('email')?.hasError('required') &&
-                (formSignup.get('email')?.touched ||
-                    formSignup.get('email')?.dirty)
-            "
-        >
+        <div *ngIf="formSignup.get('email')?.hasError('required') && submitted">
             Email is Required
         </div>
-        <div
-            *ngIf="
-                formSignup.get('email')?.hasError('email') &&
-                (formSignup.get('email')?.touched ||
-                    formSignup.get('email')?.dirty)
-            "
-        >
+        <div *ngIf="formSignup.get('email')?.hasError('email') && submitted">
             Email invalid
         </div>
         <div class="mb-3">
@@ -59,18 +41,14 @@
         </div>
         <div
             *ngIf="
-                formSignup.get('password')?.hasError('password') &&
-                (formSignup.get('password')?.touched ||
-                    formSignup.get('password')?.dirty)
+                formSignup.get('password')?.hasError('password') && submitted
             "
         >
             Mật khẩu là bắt buộc
         </div>
         <div
             *ngIf="
-                formSignup.get('password')?.hasError('minlength') &&
-                (formSignup.get('password')?.touched ||
-                    formSignup.get('password')?.dirty)
+                formSignup.get('password')?.hasError('minlength') && submitted
             "
         >
             Mật khẩu phải trên 6 ký tự
@@ -87,13 +65,7 @@
                 class="form-control"
             />
         </div>
-        <div
-            *ngIf="
-                formSignup.hasError('notMatch') &&
-                (formSignup.get('confirmPassword')?.touched ||
-                    formSignup.get('confirmPassword')?.dirty)
-            "
-        >
+        <div *ngIf="formSignup.hasError('notMatch') && submitted">
             Mật khẩu không khớp
         </div>
         <button class="btn btn-primary">Đăng nhập</button>

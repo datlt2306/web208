@@ -11,12 +11,14 @@ import { AdminProductComponent } from './pages/admin/admin-product/admin-product
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { ProductEditComponent } from './pages/product-edit/product-edit.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   {
     path: "", component: BaseLayoutComponent, children: [
       { path: "", component: HomePageComponent },
       { path: "about", component: AboutPageComponent },
+      { path: "signup", component: SignupComponent },
       { path: "product/:id", component: ProductDetailComponent }
     ]
   },

@@ -1,0 +1,54 @@
+<form [formGroup]="formSignup" (ngSubmit)="onHandleSubmit()">
+    <div class="mb-3">
+        <label for="" class="form-label">Username</label>
+        <input type="text" class="form-control" formControlName="name" />
+        <div
+            *ngIf="
+                formSignup.get('name')?.hasError('required') &&
+                (formSignup.get('name')?.touched ||
+                    formSignup.get('name')?.dirty)
+            "
+        >
+            Name is Required
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email" />
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Password</label>
+        <input
+            type="password"
+            class="form-control"
+            formControlName="password"
+        />
+    </div>
+    <div
+        *ngIf="
+            formSignup.get('password')?.hasError('required') &&
+            (formSignup.get('password')?.touched ||
+                formSignup.get('password')?.dirty)
+        "
+    >
+        Password is required
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Confirm Password</label>
+        <input
+            type="password"
+            class="form-control"
+            formControlName="confirmPassword"
+        />
+    </div>
+    <div
+        *ngIf="
+            formSignup?.hasError('notMatch') &&
+            (formSignup.get('confirmPassword')?.touched ||
+                formSignup.get('confirmPassword')?.dirty)
+        "
+    >
+        Mật khẩu không trùng khớp
+    </div>
+    <button>Submit</button>
+</form>

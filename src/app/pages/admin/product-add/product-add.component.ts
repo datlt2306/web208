@@ -8,7 +8,6 @@ import { FormBuilder, Validators } from '@angular/forms';
     styleUrls: ['./product-add.component.scss']
 })
 export class ProductAddComponent {
-    selectedFile: File;
 
     productForm = this.formBuilder.group({
         name: ['', [Validators.required, Validators.minLength(4)]],
@@ -19,7 +18,6 @@ export class ProductAddComponent {
 
     }
     onFileSelected(event: any) {
-        this.selectedFile = event.target.files[0];
     }
     onHandleSubmit() {
         if (this.productForm.invalid) {

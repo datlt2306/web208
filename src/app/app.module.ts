@@ -18,6 +18,7 @@ import { AdminProductComponent } from './pages/admin/admin-product/admin-product
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductAddComponent } from './pages/admin/product-add/product-add.component';
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 // decorator typescript
 @NgModule({
@@ -34,7 +35,8 @@ import { ProductEditComponent } from './pages/admin/product-edit/product-edit.co
     AdminProductComponent,
     ProductDetailComponent,
     ProductAddComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,27 @@
-<p>signin works!</p>
+<form [formGroup]="formSignin" (ngSubmit)="onHandleSubmit()">
+  <input type="text" placeholder="Email" formControlName="email" />
+  <div
+    *ngIf="
+      formSignin.get('email')?.hasError('required') &&
+      (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)
+    "
+  >
+    Email is Required
+  </div>
+  <div
+    *ngIf="
+      formSignin.get('email')?.hasError('email') &&
+      (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)
+    "
+  >
+    Invalid email
+  </div>
+  <input type="password" placeholder="Password" formControlName="password" />
+  <div
+    *ngIf="
+      formSignin.get('password')?.hasError('required') &&
+      (formSignin.get('password')?.touched || formSignin.get('email')?.dirty)
+    "
+  ></div>
+  <button>Đăng ký</button>
+</form>

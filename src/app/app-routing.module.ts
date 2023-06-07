@@ -11,6 +11,7 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
 import { ProductAddComponent } from './components/product-add/product-add.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: "signup", component: SignupComponent },
   { path: "signin", component: SigninComponent },
   {
-    path: 'admin', component: LayoutAdminComponent, children: [
+    path: 'admin', component: LayoutAdminComponent, canActivate: [AuthGuard], children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'product', component: ManageProductComponent },

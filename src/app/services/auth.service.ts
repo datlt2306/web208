@@ -8,10 +8,11 @@ import { Observable } from 'rxjs';
 export class AuthService {
   API_URL: string = 'http://localhost:8080/api';
   constructor(private http: HttpClient) {
-
   }
-
   signup(user: any): Observable<any> {
     return this.http.post<any>(`${this.API_URL}/signup`, user);
+  }
+  signin(user: any): Observable<any> {
+    return this.http.post<any>(`${this.API_URL}/signin`, user);
   }
 }

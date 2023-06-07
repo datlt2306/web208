@@ -18,6 +18,7 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { ProductEditComponent } from './pages/product-edit/product-edit.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin.component';
 
 // decorators
 @NgModule({
@@ -35,6 +36,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     ProductAddComponent,
     ProductEditComponent,
     SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,

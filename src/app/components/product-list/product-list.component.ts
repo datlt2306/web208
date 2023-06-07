@@ -27,9 +27,9 @@ export class ProductListComponent {
     this.status = !this.status
   }
 
-  removeItem(id: number) {
+  removeItem(id: any) {
     this.productService.deleteProduct(id).subscribe(() => {
-      this.products = this.products.filter(product => product.id !== id)
+      // this.products = this.products.filter(product => product.id !== id)
     })
     // this.onRemove.emit(id);
   }

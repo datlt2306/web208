@@ -21,3 +21,6 @@ export class AuthGuard implements CanActivate {
   }
 
 }
+
+
+// ng g guard Auth

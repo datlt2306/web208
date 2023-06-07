@@ -22,7 +22,7 @@
         *ngFor="let product of products; let i = index"
         [product]="product"
         [index]="i"
-        (onRemove)="removeItem(product.id)"
+        (onRemove)="removeItem(product._id)"
       ></tr>
     </tbody>
   </table>

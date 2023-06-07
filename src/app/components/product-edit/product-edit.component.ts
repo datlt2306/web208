@@ -37,7 +37,7 @@ export class ProductEditComponent {
   onHandleEdit() {
     if (this.productForm.valid) {
       const product: IProduct = {
-        id: this.product.id,
+        _id: this.product._id,
         name: this.productForm.value.name || "",
         price: this.productForm.value.price || 0,
       }

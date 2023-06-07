@@ -15,4 +15,7 @@ export class AuthService {
   signin(user: any): Observable<any> {
     return this.http.post<any>(`${this.API_URL}/signin`, user);
   }
+  isAuthenticated() {
+    return JSON.parse(localStorage.getItem('user')!) || null;
+  }
 }

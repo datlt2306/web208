@@ -35,7 +35,7 @@ export class ProductEditComponent {
     // kiểm tra nếu form hợp lệ 
     if (this.productForm.valid) {
       const newProduct: IProduct = {
-        id: this.product.id,
+        _id: this.product._id,
         name: this.productForm.value.name || "",
         price: this.productForm.value.price || 0,
       }

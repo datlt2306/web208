@@ -29,7 +29,7 @@ export class ProductListComponent {
   removeItem(id: any) {
     this.productService.deleteProduct(id).subscribe(() => {
       console.log('Ban da xoa thanh cong')
-      this.products = this.products.filter(item => item.id != id)
+      this.products = this.products.filter(item => item._id != id)
     })
   }
 }

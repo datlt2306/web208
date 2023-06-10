@@ -1,0 +1,43 @@
+<form [formGroup]="formSignin" (ngSubmit)="onHandleSubmit()">
+  <div class="mb-3">
+    <label for="" class="form-label">Email</label
+    ><input type="text" class="form-control" formControlName="email" />
+  </div>
+  <div
+    *ngIf="
+      formSignin.get('email')?.hasError('required') &&
+      (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)
+    "
+  >
+    Email is required
+  </div>
+  <div
+    *ngIf="
+      formSignin.get('email')?.hasError('email') &&
+      (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)
+    "
+  >
+    Email không hợp lệ
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Password</label
+    ><input type="text" class="form-control" formControlName="password" />
+  </div>
+  <div
+    *ngIf="
+      formSignin.get('password')?.hasError('required') &&
+      (formSignin.get('password')?.touched || formSignin.get('password')?.dirty)
+    "
+  >
+    Password is required
+  </div>
+  <div
+    *ngIf="
+      formSignin.get('password')?.hasError('minlength') &&
+      (formSignin.get('password')?.touched || formSignin.get('password')?.dirty)
+    "
+  >
+    Mật khẩu phải có ít nhất 6 ký tự
+  </div>
+  <button>Submit</button>
+</form>

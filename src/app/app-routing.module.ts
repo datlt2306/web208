@@ -11,17 +11,22 @@ import { AdminProductComponent } from './pages/admin/admin-product/admin-product
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { ProductEditComponent } from './pages/product-edit/product-edit.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
     path: '', component: BaseLayoutComponent, children: [
       { path: "", component: HomeComponent },
       { path: "about", component: AboutPageComponent },
+      { path: "signup", component: SignupComponent },
+      { path: "signin", component: SigninComponent },
       { path: "product/:id", component: ProductDetailComponent }
     ]
   },
   {
-    path: 'admin', component: AdminLayoutComponent, children: [
+    path: 'admin', component: AdminLayoutComponent, canActivate: [AuthGuard], children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
       { path: "dashboard", component: DashboardComponent },
       { path: "product", component: ProductListComponent },

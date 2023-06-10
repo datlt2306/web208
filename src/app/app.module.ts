@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { HomeComponent } from './home/home.component';
@@ -18,6 +18,9 @@ import { AdminProductComponent } from './pages/admin/admin-product/admin-product
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { ProductEditComponent } from './pages/product-edit/product-edit.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { AuthInterceptor } from './auth.interceptor';
 
 // decorators
 @NgModule({
@@ -35,14 +38,19 @@ import { ProductEditComponent } from './pages/product-edit/product-edit.componen
     ProductDetailComponent,
     ProductAddComponent,
     ProductEditComponent,
+    SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

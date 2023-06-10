@@ -1,0 +1,72 @@
+<form [formGroup]="formSignup" (ngSubmit)="onHandleSubmit()">
+  <div class="mb-3">
+    <label for="" class="form-label">Name</label
+    ><input type="text" class="form-control" formControlName="name" />
+  </div>
+  <div
+    *ngIf="
+      formSignup.get('name')?.hasError('required') &&
+      (formSignup.get('name')?.touched || formSignup.get('name')?.dirty)
+    "
+  >
+    Name is required
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Email</label
+    ><input type="text" class="form-control" formControlName="email" />
+  </div>
+  <div
+    *ngIf="
+      formSignup.get('email')?.hasError('required') &&
+      (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)
+    "
+  >
+    Email is required
+  </div>
+  <div
+    *ngIf="
+      formSignup.get('email')?.hasError('email') &&
+      (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)
+    "
+  >
+    Email không hợp lệ
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Password</label
+    ><input type="text" class="form-control" formControlName="password" />
+  </div>
+  <div
+    *ngIf="
+      formSignup.get('password')?.hasError('required') &&
+      (formSignup.get('password')?.touched || formSignup.get('password')?.dirty)
+    "
+  >
+    Password is required
+  </div>
+  <div
+    *ngIf="
+      formSignup.get('password')?.hasError('minlength') &&
+      (formSignup.get('password')?.touched || formSignup.get('password')?.dirty)
+    "
+  >
+    Mật khẩu phải có ít nhất 6 ký tự
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">ConfirmPassword</label
+    ><input
+      type="text"
+      class="form-control"
+      formControlName="confirmPassword"
+    />
+    <div
+      *ngIf="
+        formSignup?.hasError('passwordNotMatch') &&
+        (formSignup.get('confirmPassword')?.touched ||
+          formSignup.get('confirmPassword')?.dirty)
+      "
+    >
+      Mật khẩu không trùng
+    </div>
+    <button>Submit</button>
+  </div>
+</form>

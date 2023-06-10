@@ -13,6 +13,8 @@ import { ProductAddComponent } from './pages/admin/product-add/product-add.compo
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -20,12 +22,13 @@ const routes: Routes = [
       { path: "", component: HomePageComponent },
       { path: "about", component: AboutPageComponent },
       { path: "signup", component: SignupComponent },
+      { path: "signin", component: SigninComponent },
       { path: "product", component: ProductPageComponent },
       { path: "product/:id", component: ProductDetailComponent }
     ]
   },
   {
-    path: "admin", component: AdminLayoutComponent, children: [
+    path: "admin", component: AdminLayoutComponent, canActivate: [AuthGuard], children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
       { path: "dashboard", component: DashboardComponent },
       { path: "product", component: ProductListComponent },

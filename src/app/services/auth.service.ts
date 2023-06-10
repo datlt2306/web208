@@ -11,4 +11,12 @@ export class AuthService {
   signup(user: any): Observable<any> {
     return this.http.post('http://localhost:8080/api/signup', user);
   }
+  signin(user: any): Observable<any> {
+    return this.http.post('http://localhost:8080/api/signin', user);
+  }
+  isAuthenticated() {
+    return JSON.parse(localStorage.getItem('userInfo') || '{}');
+    // '{accessToken, user}'
+    // '{}'
+  }
 }

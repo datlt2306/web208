@@ -18,11 +18,11 @@
                 <td>
                     <button
                         class="btn btn-danger mr-1"
-                        (click)="removeItem(product.id)"
+                        (click)="removeItem(product._id)"
                     >
                         Xóa
                     </button>
-                    <a routerLink="/admin/product/{{ product.id }}/edit"
+                    <a routerLink="/admin/product/{{ product._id }}/edit"
                         >Cập nhật</a
                     >
                 </td>

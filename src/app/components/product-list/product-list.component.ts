@@ -21,10 +21,7 @@ export class ProductListComponent {
   }
   removeItem(id: any) {
     // xoa API
-    this.productService.deleteProduct(id).subscribe(() => {
-      // reRender
-      this.products = this.products.filter(item => item.id !== id)
-    })
+    this.productService.deleteProduct(id).subscribe(() => { })
     // this.onRemove.emit(id);
   }
 }

@@ -39,7 +39,7 @@ export class ProductEditComponent {
     if (this.productForm.invalid) return;
 
     const product: IProduct = {
-      id: this.product.id,
+      _id: this.product._id,
       name: this.productForm.value.name || '',
       price: this.productForm.value.price || 0
     }

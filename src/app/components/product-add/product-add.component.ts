@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
-import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { IProduct } from 'src/app/interfaces/product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-add',
@@ -9,27 +9,18 @@ import { IProduct } from 'src/app/interfaces/product';
   styleUrls: ['./product-add.component.scss']
 })
 export class ProductAddComponent {
-  // product = {
-  //   name: '',
-  //   price: 0,
-  //   img: "anh"
-  // };
-  // constructor(private productService: ProductService) {
-
-  // }
-  // onHandleAdd() {
-  //   this.productService.addProduct(this.product).subscribe((data) => {
-  //     console.log(data)
-  //   }, error => console.log(error.message))
-  // }
-  constructor(private formBuilder: FormBuilder,
+  constructor(
+    private formBuilder: FormBuilder,
     private productService: ProductService) {
 
+    this.productForm = this.formBuilder.group({
+      name: [''],
+      price: [0],
+    })
+
   }
-  productForm = this.formBuilder.group({
-    name: [''],
-    price: [0],
-  })
+  productForm!: FormGroup;
+
   onHandleSubmit() {
     if (this.productForm.valid) {
       const product: IProduct = {

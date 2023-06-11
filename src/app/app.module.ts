@@ -1,41 +1,32 @@
-import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { ProductListComponent } from './components/product-list/product-list.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { AboutComponent } from './pages/about/about.component';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
-import { AdminProductComponent } from './pages/admin/admin-product/admin-product.component';
+import { AuthInterceptor } from './auth.interceptor';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
-import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
-import { ProductAddComponent } from './pages/product-add/product-add.component';
-import { ProductEditComponent } from './pages/product-edit/product-edit.component';
-import { SignupComponent } from './pages/signup/signup.component';
+import { AboutComponent } from './pages/about/about.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { SigninComponent } from './pages/signin/signin.component';
-import { AuthInterceptor } from './auth.interceptor';
+import { SignupComponent } from './pages/signup/signup.component';
+import { ProductModule } from './modules/product/product.module';
 
 // decorators
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent,
     HomePageComponent,
     AboutComponent,
     PageNotFoundComponent,
     DashboardComponent,
-    AdminProductComponent,
     AdminLayoutComponent,
     BaseLayoutComponent,
-    ProductDetailComponent,
-    ProductAddComponent,
-    ProductEditComponent,
     SignupComponent,
     SigninComponent,
   ],
@@ -44,7 +35,8 @@ import { AuthInterceptor } from './auth.interceptor';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ProductModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

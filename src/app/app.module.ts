@@ -22,7 +22,6 @@ import { ProductModule } from './modules/product/product.module';
     LayoutAdminComponent,
     DashboardComponent,
     PageNotFoundComponent,
-    ManageProductComponent,
     SigninComponent,
     SignupComponent,
   ],

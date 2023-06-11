@@ -7,6 +7,7 @@ import { ProductDetailComponent } from 'src/app/components/product-detail/produc
 import { ProductEditComponent } from 'src/app/components/product-edit/product-edit.component';
 import { ProductItemComponent } from 'src/app/components/product-item/product-item.component';
 import { ProductListComponent } from 'src/app/components/product-list/product-list.component';
+import { ManageProductComponent } from 'src/app/pages/admin/manage-product/manage-product.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ProductListComponent } from 'src/app/components/product-list/product-li
     ProductItemComponent,
     ProductEditComponent,
     ProductAddComponent,
+    ManageProductComponent
   ],
   imports: [
     CommonModule,

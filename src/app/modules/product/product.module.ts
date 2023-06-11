@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { ProductAddComponent } from 'src/app/components/product-add/product-add.component';
 import { ProductDetailComponent } from 'src/app/components/product-detail/product-detail.component';
 import { ProductEditComponent } from 'src/app/components/product-edit/product-edit.component';

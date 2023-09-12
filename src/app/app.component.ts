@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sum22';
+  myName: string = 'Le Trong Dat';
+
+  run() {
+    return `Hello ${this.myName}`;
+  }
 }

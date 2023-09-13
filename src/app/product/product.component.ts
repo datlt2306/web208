@@ -25,10 +25,6 @@ export class ProductComponent {
   setName(newName: string) {
     this.product.name = newName;
   }
-
-  changeName(e: any) {
-    this.value = e.target.value;
-  }
 }
 
 

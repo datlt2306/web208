@@ -21,10 +21,10 @@ export class AppComponent {
     }
   }
 
-  showStudentName() {
-    return this.student.name
-  }
   setName(newName: string) {
-    this.student.name = newName
+    return this.student.name = newName;
+  }
+  onHandleInput(event: any) {
+    return this.student.name = event.target.value;
   }
 }

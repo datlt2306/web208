@@ -9,6 +9,16 @@
     <button class="bg-blue-500 p-3 rounded text-white" (click)="setName('Dat')">
       Change Name
     </button>
+    <input
+      type="text"
+      (input)="onHandleInput($event)"
+      class="border-2 border-red-500 p-2"
+    />
+    <input
+      type="text"
+      [(ngModel)]="student.name"
+      class="border-2 border-blue-500 p-2"
+    />
   </div>
 </div>
 <!-- 

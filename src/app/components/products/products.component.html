@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Product Manager</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Ảnh</th>
+        <th>Tên</th>
+        <th>Code</th>
+        <th>Ngày</th>
+        <th>Giá</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let product of products; index as i">
+        <td>{{ i }}</td>
+        <td width="60">
+          <img [src]="product.imageUrl" width="50" height="50" />
+        </td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.code }}</td>
+        <td>{{ product.releaseDate }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <button class="btn btn-danger">Xóa</button>
+          <button class="btn btn-primary ms-2">Sửa</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

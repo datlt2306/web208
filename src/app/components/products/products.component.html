@@ -21,10 +21,14 @@
         </td>
         <td>{{ product.name }}</td>
         <td>{{ product.code }}</td>
-        <td>{{ product.releaseDate }}</td>
-        <td>{{ product.price }}</td>
+        <td>{{ product.releaseDate | date : "dd-mm-yyyy" }}</td>
         <td>
-          <button class="btn btn-danger">Xóa</button>
+          {{ product.price | currency : "VND" : "symbol" : "1.3-3" }}
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="removeProduct(product.id!)">
+            Xóa
+          </button>
           <button class="btn btn-primary ms-2">Sửa</button>
         </td>
       </tr>

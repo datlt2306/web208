@@ -88,5 +88,10 @@ export class ProductsComponent {
 			"imageUrl": "https://loremflickr.com/640/480",
 			"id": "10"
 		}
-	]
+	];
+
+	removeItem(id: number | string) {
+		const confirm = window.confirm('Are you fucking sure?');
+		if (confirm) this.products = this.products.filter(item => item.id != id);
+	}
 }

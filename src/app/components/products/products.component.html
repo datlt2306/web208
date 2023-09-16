@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Quản lý sản phẩm</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <th>#</th>
+            <th>Ảnh</th>
+            <th>Mã</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Ngày tạo</th>
+            <th>Hành động</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products; index as i">
+                <td>{{ i + 1 }}</td>
+                <td width="60">
+                    <img
+                        [src]="product.imageUrl"
+                        alt="{{ product.name }}"
+                        width="50"
+                        height="50"
+                    />
+                </td>
+                <td>{{ product.code }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.releaseDate }}</td>
+                <td width="150" class="text-center">
+                    <button class="btn btn-danger">Xóa</button>
+                    <button class="btn btn-primary ms-2">Sửa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

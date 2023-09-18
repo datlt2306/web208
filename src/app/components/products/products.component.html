@@ -1,5 +1,8 @@
 <div class="container">
   <h2>Product Manager</h2>
+  <div class="mb-2">
+    Lọc theo tên <input type="text" [(ngModel)]="searchText" class="border-2" />
+  </div>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -14,8 +17,8 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let product of products; index as i">
-        <td>{{ i }}</td>
+      <tr *ngFor="let product of products | searchBox : searchText; index as i">
+        <td>{{ i + 1 }}</td>
         <td width="60">
           <img [src]="product.imageUrl" width="50" height="50" />
         </td>

@@ -7,6 +7,7 @@ import { IProduct } from 'src/app/interfaces/product';
     styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
+    searchText: string = "";
     products: IProduct[] = [
         {
             "name": "Practical Frozen Towels",

@@ -8,6 +8,7 @@ import { IProduct } from 'src/app/interfaces/product';
 })
 export class ProductsComponent {
     searchText: string = "";
+    currentProduct!: IProduct;
     products: IProduct[] = [
         {
             "name": "Practical Frozen Towels",
@@ -96,5 +97,8 @@ export class ProductsComponent {
             this.products = this.products.filter(item => item.id !== id);
         }
 
+    }
+    showProduct(product: IProduct) {
+        this.currentProduct = product;
     }
 }

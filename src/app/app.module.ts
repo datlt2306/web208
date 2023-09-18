@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './components/products/products.component';
 import { SearchBoxPipe } from './search-box.pipe';
 import { ChangeNumberPipe } from './change-number.pipe';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 // github.com/datlt2306/web208
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ChangeNumberPipe } from './change-number.pipe';
     ProductsComponent,
     SearchBoxPipe,
     ChangeNumberPipe,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,

@@ -96,7 +96,6 @@ export class ProductsComponent {
         if (confirm) {
             this.products = this.products.filter(item => item.id !== id);
         }
-
     }
     showProduct(product: IProduct) {
         this.currentProduct = product;

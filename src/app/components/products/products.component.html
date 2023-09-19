@@ -42,4 +42,4 @@
 </div>
 
 <hr />
-<app-product-edit [data]="currentProduct" />
+<app-product-edit [data]="currentProduct" (onRemove)="removeProduct($event)" />

@@ -1,1 +1,4 @@
-<p *ngIf="product">{{ product.name }}</p>
+<div *ngIf="product">
+  <p>{{ product.name }}</p>
+  <button (click)="onHandleRemove(product.id)">Update</button>
+</div>

@@ -41,9 +41,18 @@
                     >
                         Xóa
                     </button>
-                    <button class="btn btn-primary ms-2">Sửa</button>
+                    <button
+                        class="btn btn-primary ms-2"
+                        (click)="editProduct(product)"
+                    >
+                        Sửa
+                    </button>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
+<app-product-detail
+    [product]="currentProduct"
+    (onRemove)="onHandlerRemove($event)"
+/>

@@ -90,9 +90,39 @@ export class ProductsComponent {
 		}
 	];
 
+	currentProduct!: IProduct;
+
 	searchText: string = "";
 	removeItem(id: number | string) {
 		const confirm = window.confirm('Are you fucking sure?');
 		if (confirm) this.products = this.products.filter(item => item.id != id);
 	}
+	editProduct(product: IProduct) {
+		console.log(product);
+		this.currentProduct = product;
+	}
+	onHandlerRemove(id: any) {
+		console.log(id);
+	}
 }
+
+/**
+ * app.jsx
+ * function onHandleRemove(id){
+ * 	... xóa  phần tử
+ * }
+ */
+
+// <ShowDetail data={{name: "Product A"}} onRemove={onHandleRemove} />
+
+/*
+show-detail.jsx
+function ShowDetail({data, onRemove}){
+	console.log(data) // {name: "Product A"}
+	return (
+		{data.map(item => (
+			{item.name} <button onClick={() => onRemove(item.id)}>Remove</button>
+		))}
+	)
+}
+*/

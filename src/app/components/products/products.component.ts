@@ -89,7 +89,8 @@ export class ProductsComponent {
 			"id": "10"
 		}
 	];
-	textSearch: string = "";
+
+	searchText: string = "";
 	removeItem(id: number | string) {
 		const confirm = window.confirm('Are you fucking sure?');
 		if (confirm) this.products = this.products.filter(item => item.id != id);

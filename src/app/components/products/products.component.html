@@ -1,6 +1,7 @@
+{{ 1 | changeNumberToText }}
 <div class="container">
     <h2>Quản lý sản phẩm</h2>
-    <input type="text" [(ngModel)]="textSearch" class="border" />
+    <input type="text" [(ngModel)]="searchText" />
     <table class="table table-bordered">
         <thead>
             <th>#</th>
@@ -14,7 +15,7 @@
         <tbody>
             <tr
                 *ngFor="
-                    let product of products | searchBox : textSearch;
+                    let product of products | searchBox : searchText;
                     index as i
                 "
             >

@@ -13,11 +13,9 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductsComponent {
   searchText: string = "";
   products: IProduct[] = [];
-
   constructor(private productService: ProductService) {
     this.products = this.productService.getAll();
   }
-
 
   removeProduct(id: number | string) {
     const confirm = window.confirm('Are you fucking sure?');
@@ -31,3 +29,4 @@ export class ProductsComponent {
 
 
 // ng g s ten_service
+// inject vào component

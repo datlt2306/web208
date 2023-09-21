@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductService {
-  myName = 'dat';
+
   constructor() { }
 
   getAll() {
@@ -89,6 +89,7 @@ export class ProductService {
         "imageUrl": "https://loremflickr.com/640/480",
         "id": "10"
       }
-    ];
+    ]
   }
+
 }

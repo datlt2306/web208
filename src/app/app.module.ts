@@ -9,6 +9,7 @@ import { ChangeNumberToTextPipe } from './change-number-to-text.pipe';
 import { SearchBoxPipe } from './search-box.pipe';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './component/not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     ChangeNumberToTextPipe,
     SearchBoxPipe,
     ProductDetailComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

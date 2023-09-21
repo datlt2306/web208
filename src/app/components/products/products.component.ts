@@ -14,7 +14,11 @@ export class ProductsComponent {
   searchText: string = "";
   products: IProduct[] = [];
   constructor(private productService: ProductService) {
-    this.products = this.productService.getAll();
+    this.productService.getAll().subscribe({
+      next: (data) => { this.products = data },
+      error: (error) => { console.log('error', error.message) },
+      complete: () => { console.log('complete') }
+    })
   }
 
   removeProduct(id: number | string) {
@@ -30,3 +34,4 @@ export class ProductsComponent {
 
 // ng g s ten_service
 // inject vào component
+

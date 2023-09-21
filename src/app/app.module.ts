@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchBoxPipe } from './search-box.pipe';
 import { ChangeNumberToTextPipe } from './change-number-to-text.pipe';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { SearchBoxPipe } from './search-box.pipe';
 import { ChangeNumberPipe } from './change-number.pipe';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { HttpClientModule } from '@angular/common/http';
+
 // github.com/datlt2306/web208
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,7 @@ import { SearchBoxPipe } from './search-box.pipe';
 import { ChangeNumberPipe } from './change-number.pipe';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 // github.com/datlt2306/web208
 @NgModule({
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     SearchBoxPipe,
     ChangeNumberPipe,
     ProductEditComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

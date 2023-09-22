@@ -15,20 +15,23 @@ export class ProductsComponent {
     constructor(private productService: ProductService) {
         this.productService.getAll().subscribe({
             next: (data) => this.products = data,
-            error: (error) => console.log(error),
+            error: (error) => console.log(error)
         })
     }
 
     removeProduct(id: number | string) {
         const confirm = window.confirm('Are you fucking sure?');
         if (confirm) {
-            this.products = this.products.filter(item => item.id !== id);
+            this.productService.removeItem(id).subscribe(() => {
+                this.products = this.products.filter(item => item.id !== id);
+            })
         }
     }
     showProduct(product: IProduct) {
         this.currentProduct = product;
     }
 }
+
 // ng g s services/product
 // b1: import HttpClientModule vao file app.module.ts
 // b2: inject service HttpClient vao product.service.ts

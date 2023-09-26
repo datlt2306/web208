@@ -1,0 +1,7 @@
+<form (ngSubmit)="onHandleSubmit()" [formGroup]="productForm">
+  <input type="text" formControlName="name" class="border-2" />
+  <input type="number" formControlName="price" class="border-2" />
+  <button type="submit" [disabled]="!productForm.valid">Submit</button>
+</form>
+
+{{ productForm.value | json }}

@@ -10,6 +10,11 @@ import { SearchBoxPipe } from './search-box.pipe';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './component/not-found/not-found.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ContactComponent } from './pages/contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +23,11 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
     SearchBoxPipe,
     ProductDetailComponent,
     NotFoundComponent,
+    AdminLayoutComponent,
+    BaseLayoutComponent,
+    AboutComponent,
+    ProductComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

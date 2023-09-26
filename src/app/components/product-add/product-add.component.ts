@@ -20,12 +20,8 @@ export class ProductAddComponent {
   onHandleSubmit() {
     if (this.productForm.valid) {
       // Lấy giá trị form 
-      const product: IProduct = {
-        name: this.productForm.value.name || "",
-        price: this.productForm.value.price || 0
-      };
       // gọi service và đẩy dữ liệu lên API
-      this.productService.addProduct(product).subscribe();
+      this.productService.addProduct(this.productForm.value as IProduct).subscribe();
     }
   }
 }

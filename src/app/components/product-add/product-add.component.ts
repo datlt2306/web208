@@ -1,21 +1,25 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-
+import { FormBuilder } from '@angular/forms';
+import { IProduct } from 'src/app/interfaces/product';
+import { ProductService } from 'src/app/services/product.service';
 @Component({
   selector: 'app-product-add',
   templateUrl: './product-add.component.html',
   styleUrls: ['./product-add.component.css']
 })
 export class ProductAddComponent {
-  productForm = this.fb.group({
-    name: ['', Validators.required],
-    price: [''],
+  productForm = this.formBuilder.group({
+    name: [''],
+    price: [0]
   })
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private productService: ProductService) {
 
   }
-
   onHandleSubmit() {
-    console.log(this.productForm.value);
+    if (this.productForm.valid) {
+      this.productService.addItem(this.productForm.value as IProduct).subscribe();
+    }
   }
 }

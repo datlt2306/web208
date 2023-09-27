@@ -1,4 +1,5 @@
-<div *ngIf="product">
-  <p>{{ product.name }}</p>
-  <button (click)="onHandleRemove(product.id)">Update</button>
-</div>
+<form (ngSubmit)="onHandleSubmit()" [formGroup]="productForm">
+  <input type="text" class="border-2 border-red-500" formControlName="name" />
+  <input type="text" class="border-2 border-red-500" formControlName="price" />
+  <button type="submit" class="btn btn-primary">Cập nhật</button>
+</form>

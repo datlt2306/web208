@@ -5,19 +5,26 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 const routes: Routes = [
   {
     path: "", component: BaseLayoutComponent, children: [
-      // localhost:4200/products
-      { path: "products", component: ProductsComponent },
-      { path: "products/:id", component: ProductDetailComponent }
+      { path: "", component: HomeComponent },
+      { path: "contact", component: ContactComponent },
+      { path: "product", component: ProductsComponent },
+      { path: "product/:id", component: ProductDetailComponent }
     ],
   },
   {
     path: "admin", component: AdminLayoutComponent, children: [
-      // localhost:4200/admin/products
-      { path: "products", component: ProductsComponent }
+      { path: "", redirectTo: "dashboard", pathMatch: "full" },
+      { path: "dashboard", component: DashboardComponent },
+      { path: "products", component: ProductsComponent },
+      { path: "products/:id", component: ProductEditComponent }
     ]
   },
   { path: "**", component: NotFoundComponent }

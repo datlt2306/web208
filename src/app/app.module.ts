@@ -14,6 +14,10 @@ import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
+import { HomeComponent } from './pages/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 // github.com/datlt2306/web208
 @NgModule({
@@ -28,6 +32,10 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
     AdminLayoutComponent,
     ProductDetailComponent,
     ProductAddComponent,
+    HomeComponent,
+    HeaderComponent,
+    ContactComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

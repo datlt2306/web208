@@ -1,4 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { IProduct } from 'src/app/interfaces/product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-edit',
@@ -6,11 +10,33 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent {
-  @Input('data') product: any;
-  @Output() onRemove = new EventEmitter<any>
-
-  onHandleRemove(id: any) {
-    this.onRemove.emit(id)
+  productForm = this.formBuilder.group({
+    name: [''],
+    price: [0]
+  });
+  product!: IProduct;
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: ActivatedRoute,
+    private productService: ProductService
+  ) {
+    this.router.params.subscribe(({ id }) => {
+      this.productService.getItemById(id).subscribe({
+        next: (product: any) => {
+          this.product = product;
+          this.productForm.patchValue(product);
+        }
+      });
+    })
+  }
+  onHandleSubmit() {
+    if (this.productForm.valid) {
+      this.productService.updateItem({ ...this.productForm.value, id: this.product.id } as IProduct).subscribe({
+        complete: () => {
+          alert('bạn đã cập nhật thành công')
+        }
+      });
+    }
   }
 }
 

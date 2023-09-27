@@ -32,7 +32,10 @@
           <button class="btn btn-danger" (click)="removeProduct(product.id!)">
             Xóa
           </button>
-          <button class="btn btn-primary ms-2" (click)="showProduct(product)">
+          <button
+            class="btn btn-primary ms-2"
+            routerLink="/admin/products/{{ product.id }}"
+          >
             Sửa
           </button>
         </td>
@@ -42,4 +45,3 @@
 </div>
 
 <hr />
-<app-product-edit [data]="currentProduct" (onRemove)="removeProduct($event)" />

@@ -16,6 +16,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProductComponent } from './pages/product/product.component';
 import { ProductAddComponent } from './pages/product-add/product-add.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { HomeComponent } from './pages/home/home.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { ProductAddComponent } from './pages/product-add/product-add.component';
     ContactComponent,
     ProductComponent,
     ProductAddComponent,
+    ProductDetailComponent,
+    HomeComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

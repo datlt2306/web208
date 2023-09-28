@@ -11,9 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductDetailComponent {
   product!: IProduct;
   constructor(
-    // inject service xử lý router
     private router: ActivatedRoute,
-    // inject service product
     private productService: ProductService
   ) {
     this.router.params.subscribe(({ id }) => {

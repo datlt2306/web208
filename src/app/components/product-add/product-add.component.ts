@@ -25,3 +25,6 @@ export class ProductAddComponent {
     }
   }
 }
+
+
+// dependency injection

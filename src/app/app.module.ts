@@ -16,6 +16,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { ProductComponent } from './pages/product/product.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +33,9 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
     ProductComponent,
     ContactComponent,
     ProductAddComponent,
+    HomePageComponent,
+    DashboardComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,

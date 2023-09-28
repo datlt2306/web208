@@ -15,6 +15,7 @@ export class ProductEditComponent {
     price: [0]
   });
   product!: IProduct;
+  mode!: 'create' | 'update';
   constructor(
     private router: ActivatedRoute,
     private productService: ProductService,
@@ -25,23 +26,31 @@ export class ProductEditComponent {
   async ngOnInit() {
 
     const { id } = this.router.snapshot.params;
-    try {
-      // call API to get product by id
-      this.product = await firstValueFrom(this.productService.getProductById(id));
-      // set value for Form
-      this.productForm.patchValue(this.product as any);
-    } catch (error: any) {
-      console.log(error.message)
+    if (id) {
+      try {
+        // call API to get product by id
+        this.product = await firstValueFrom(this.productService.getProductById(id));
+        // set value for Form
+        this.productForm.patchValue(this.product as any);
+        this.mode = 'update';
+      } catch (error: any) {
+        console.log(error.message)
+      }
     }
-
   }
   async onHandleSubmit() {
     if (this.productForm.invalid) return;
 
-    // call API to update product
-    const product: any = { id: this.product.id, ...this.productForm.value };
-    await firstValueFrom(this.productService.updateProduct(product))
-    alert('Update product successfully!')
+
+    if (this.mode === 'update') {
+      const product: any = { id: this.product.id, ...this.productForm.value };
+      await firstValueFrom(this.productService.updateProduct(product))
+      alert('Update product successfully!')
+    } else {
+      await firstValueFrom(this.productService.addProduct(this.productForm.value as IProduct))
+      alert('Create product successfully!')
+    }
+
   }
   // Bonus: Tạo Component và Khai báo routing
   // B1: Lấy ID trên url

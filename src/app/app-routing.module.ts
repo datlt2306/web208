@@ -27,6 +27,7 @@ const routes: Routes = [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
       { path: "dashboard", component: DashboardComponent },
       { path: 'products', component: ProductsComponent },
+      { path: 'products/add', component: ProductEditComponent },
       { path: 'products/:id/edit', component: ProductEditComponent }
     ]
   },

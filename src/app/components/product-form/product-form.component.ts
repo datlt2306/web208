@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/services/product.service';
+import { lastValueFrom } from 'rxjs'
 
 @Component({
   selector: 'app-product-form',
@@ -23,31 +24,41 @@ export class ProductFormComponent {
   constructor(
     private formBuilder: FormBuilder,
     private productService: ProductService,
-    private router: ActivatedRoute) {
-    this.router.params.subscribe(({ id }) => {
-      if (id) {
-        this.mode = "update";
-        this.productService.getProductById(id).subscribe({
-          next: (product: any) => {
-            this.product = product;
-            this.productForm.patchValue(product);
-          }
-        })
+    private router: ActivatedRoute) { }
+
+  async ngOnInit() {
+    const { id } = this.router.snapshot.params;
+    if (id) {
+      this.mode = "update";
+      try {
+        this.product = await lastValueFrom(this.productService.getProductById(id))
+        this.productForm.patchValue(this.product as any);
+      } catch (error: any) {
+        console.log(error.message)
       }
-    })
+    }
   }
 
-  onHandleSubmit() {
+  async onHandleSubmit() {
     if (this.productForm.invalid) return;
     if (this.mode === 'create') {
-      this.productService.addProduct(this.productForm.value as IProduct).subscribe({
-        complete: () => console.log('thêm thành công')
-      })
+      try {
+        await lastValueFrom(this.productService.addProduct(this.productForm.value as IProduct))
+        console.log('Thêm thành công')
+      } catch (error: any) {
+        console.log(error.message)
+      }
     }
-    const product = { id: this.product.id, ...this.productForm.value };
-    this.productService.editProduct(product as IProduct).subscribe({
-      complete: () => console.log('sửa thành công')
-    });
+    if (this.mode === 'update') {
+      const product = { id: this.product.id, ...this.productForm.value };
+      try {
+        await lastValueFrom(this.productService.editProduct(product as IProduct))
+        console.log('Cập nhật thành công')
+      } catch (error: any) {
+        console.log(error.message)
+      }
+
+    }
   }
 }
 

@@ -50,11 +50,14 @@
                     >
                         Xóa
                     </button>
-                    <button class="btn btn-primary ms-2">Sửa</button>
+                    <button
+                        class="btn btn-primary ms-2"
+                        routerLink="/admin/product/{{ product.id }}/edit"
+                    >
+                        Sửa
+                    </button>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
-
-<app-product-edit [products]="products" (onRemove)="onHandleRemove($event)" />

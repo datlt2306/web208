@@ -1,24 +1,24 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './components/products/products.component';
-import { FormsModule } from '@angular/forms';
-import { SearchBoxPipe } from './search-box.pipe';
 import { ChangeNumberToTextPipe } from './change-number-to-text.pipe';
-import { ProductEditComponent } from './components/product-edit/product-edit.component';
-import { HttpClientModule } from '@angular/common/http';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
+import { ProductsComponent } from './components/products/products.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { ProductComponent } from './pages/product/product.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
-import { HomeComponent } from './pages/home/home.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ProductComponent } from './pages/product/product.component';
+import { SearchBoxPipe } from './search-box.pipe';
+import { ProductFormComponent } from './components/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,6 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     ProductsComponent,
     SearchBoxPipe,
     ChangeNumberToTextPipe,
-    ProductEditComponent,
     NotFoundComponent,
     BaseLayoutComponent,
     AdminLayoutComponent,
@@ -37,6 +36,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     ProductDetailComponent,
     HomeComponent,
     DashboardComponent,
+    HomePageComponent,
+    ProductFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,26 @@
+<form
+    (ngSubmit)="onHandleSubmit()"
+    class="max-w-xl mx-auto"
+    [formGroup]="productForm"
+>
+    <h1>{{ mode === "create" ? "Thêm" : "Cập nhật" }} sản phẩm</h1>
+    <div class="mb-3">
+        <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            placeholder="Tên sản phẩm"
+        />
+    </div>
+    <div class="mb-3">
+        <input
+            type="number"
+            class="form-control"
+            formControlName="price"
+            placeholder="Giá sản phẩm"
+        />
+    </div>
+    <button type="submit" class="btn btn-primary">
+        {{ mode === "create" ? "Thêm" : "Cập nhật" }}
+    </button>
+</form>

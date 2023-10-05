@@ -19,32 +19,27 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { ProductComponent } from './pages/product/product.component';
 import { SearchBoxPipe } from './search-box.pipe';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductModule } from './modules/product.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent,
-    SearchBoxPipe,
-    ChangeNumberToTextPipe,
     NotFoundComponent,
     BaseLayoutComponent,
     AdminLayoutComponent,
     AboutComponent,
     ContactComponent,
-    ProductComponent,
-    ProductAddComponent,
-    ProductDetailComponent,
     HomeComponent,
     DashboardComponent,
     HomePageComponent,
-    ProductFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]

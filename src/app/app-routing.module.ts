@@ -9,22 +9,21 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { productAdminRoutes, productWebsiteRoutes } from './routes/product.route';
 
 const routes: Routes = [
   {
     path: "", component: BaseLayoutComponent, children: [
       { path: "", component: HomeComponent },
       { path: "contact", component: ContactComponent },
-      { path: "product", component: ProductsComponent },
-      { path: "product/:id", component: ProductDetailComponent }
+      ...productWebsiteRoutes
     ],
   },
   {
     path: "admin", component: AdminLayoutComponent, children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
       { path: "dashboard", component: DashboardComponent },
-      { path: "products", component: ProductsComponent },
-      { path: "products/:id", component: ProductEditComponent }
+      ...productAdminRoutes
     ]
   },
   { path: "**", component: NotFoundComponent }

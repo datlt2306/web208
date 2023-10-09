@@ -31,7 +31,7 @@ export class ProductEditComponent {
   }
   onHandleSubmit() {
     if (this.productForm.valid) {
-      this.productService.updateItem({ ...this.productForm.value, id: this.product.id } as IProduct).subscribe({
+      this.productService.updateItem({ ...this.productForm.value, id: this.product._id } as IProduct).subscribe({
         complete: () => {
           alert('bạn đã cập nhật thành công')
         }

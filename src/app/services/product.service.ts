@@ -7,7 +7,7 @@ import { IProduct } from '../interfaces/product';
   providedIn: 'root'
 })
 export class ProductService {
-  API_URL: string = `https://6110f09bc38a0900171f0ed0.mockapi.io/product`
+  API_URL: string = `http://localhost:8080/api/products`
 
   constructor(private http: HttpClient) {
   }
@@ -24,6 +24,6 @@ export class ProductService {
     return this.http.post<IProduct>(this.API_URL, product)
   }
   updateItem(product: IProduct): Observable<IProduct> {
-    return this.http.put<IProduct>(`${this.API_URL}/${product.id}`, product)
+    return this.http.put<IProduct>(`${this.API_URL}/${product._id}`, product)
   }
 }

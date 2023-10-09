@@ -20,21 +20,21 @@
       <tr *ngFor="let product of products | searchBox : searchText; index as i">
         <td>{{ i + 1 }}</td>
         <td width="60">
-          <img [src]="product.imageUrl" width="50" height="50" />
+          <!-- <img [src]="product.imageUrl" width="50" height="50" /> -->
         </td>
         <td>{{ product.name }}</td>
-        <td>{{ product.code }}</td>
-        <td>{{ product.releaseDate | date : "dd-mm-yyyy" }}</td>
+        <!-- <td>{{ product.code }}</td> -->
+        <td>{{ product.createAt | date : "dd-mm-yyyy" }}</td>
         <td>
           {{ product.price | currency : "VND" : "symbol" : "1.3-3" }}
         </td>
         <td>
-          <button class="btn btn-danger" (click)="removeProduct(product.id!)">
+          <button class="btn btn-danger" (click)="removeProduct(product._id!)">
             Xóa
           </button>
           <button
             class="btn btn-primary ms-2"
-            routerLink="/admin/products/{{ product.id }}"
+            routerLink="/admin/products/{{ product._id }}"
           >
             Sửa
           </button>

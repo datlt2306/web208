@@ -18,12 +18,11 @@ export class ProductsComponent {
             error: (error) => console.log(error)
         })
     }
-
     removeProduct(id: number | string) {
         const confirm = window.confirm('Are you fucking sure?');
         if (confirm) {
             this.productService.removeItem(id).subscribe(() => {
-                this.products = this.products.filter(item => item.id !== id);
+                this.products = this.products.filter(item => item._id !== id);
             })
         }
     }

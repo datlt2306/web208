@@ -13,7 +13,8 @@ export class ProductsComponent {
 
   constructor(private productService: ProductService) {
     this.productService.getAll().subscribe({
-      next: (data) => {
+      next: ({ data }: any) => {
+        // { data: [], pagination: { }}
         this.products = data;
       },
       error: (error) => {
@@ -23,9 +24,17 @@ export class ProductsComponent {
   }
 
   searchText: string = "";
-  removeItem(id: number | string) {
+  removeItem(id:string) {
+    console.log(id);
     const confirm = window.confirm('Are you fucking sure?');
-    if (confirm) this.products = this.products.filter(item => item.id != id);
+    if (confirm) {
+      this.productService.removeProduct(id).subscribe({
+        next: (data) => {
+          console.log(data);
+          console.log('Xóa sản phẩm thành công')
+        }
+      })
+    };
   }
   editProduct(product: IProduct) {
     console.log(product);
@@ -56,3 +65,5 @@ function ShowDetail({data, onRemove}){
   )
 }
 */
+
+

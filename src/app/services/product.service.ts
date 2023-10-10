@@ -11,15 +11,18 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(`https://6110f09bc38a0900171f0ed0.mockapi.io/product`)
+    return this.http.get<IProduct[]>(`http://localhost:8080/api/products`)
   }
   getProductById(id: number | string): Observable<IProduct> {
-    return this.http.get<IProduct>(`https://6110f09bc38a0900171f0ed0.mockapi.io/product/${id}`)
+    return this.http.get<IProduct>(`http://localhost:8080/api/products/${id}`)
   }
   addProduct(product: IProduct): Observable<IProduct> {
-    return this.http.post<IProduct>(`https://6110f09bc38a0900171f0ed0.mockapi.io/product`, product)
+    return this.http.post<IProduct>(`http://localhost:8080/api/products`, product)
   }
   updateProduct(product: IProduct): Observable<IProduct> {
-    return this.http.put<IProduct>(`https://6110f09bc38a0900171f0ed0.mockapi.io/product/${product.id}`, product)
+    return this.http.put<IProduct>(`http://localhost:8080/api/products/${product._id}`, product)
+  }
+  removeProduct(id: string): Observable<{message: string, data: IProduct}> {
+    return this.http.delete<{message: string, data: IProduct}>(`http://localhost:8080/api/products/${id}`)
   }
 }

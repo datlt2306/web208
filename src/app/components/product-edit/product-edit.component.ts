@@ -43,7 +43,7 @@ export class ProductEditComponent {
 
 
     if (this.mode === 'update') {
-      const product: any = { id: this.product.id, ...this.productForm.value };
+      const product: any = { ...this.product, ...this.productForm.value };
       await firstValueFrom(this.productService.updateProduct(product))
       alert('Update product successfully!')
     } else {

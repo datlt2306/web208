@@ -50,9 +50,8 @@ export class ProductFormComponent {
       }
     }
     if (this.mode === 'update') {
-      const product = { id: this.product.id, ...this.productForm.value };
       try {
-        await lastValueFrom(this.productService.editProduct(product as IProduct))
+        await lastValueFrom(this.productService.editProduct( { ...this.product, ...this.productForm.value } as IProduct))
         console.log('Cập nhật thành công')
       } catch (error: any) {
         console.log(error.message)

@@ -16,7 +16,9 @@ export class ProductsComponent {
   constructor(private productService: ProductService) {
 
     this.productService.getAll().subscribe({
-      next: (data) => { this.products = data },
+      next: ({ data }: any) => { 
+        this.products = data
+       },
       error: (error) => { console.log('error', error.message) },
       complete: () => { console.log('complete') }
     })
@@ -24,7 +26,7 @@ export class ProductsComponent {
 
   removeProduct(id: number | string) {
     const confirm = window.confirm('Are you fucking sure?');
-    if (confirm) this.products = this.products.filter(item => item.id != id);
+    if (confirm) this.products = this.products.filter(item => item._id != id);
   }
   onHandleRemove(id: any) {
     console.log(id);

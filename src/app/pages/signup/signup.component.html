@@ -1,0 +1,62 @@
+<form [formGroup]="formSignup" (ngSubmit)="onHandleSubmit()">
+  <div class="mb-3">
+    <input type="text" formControlName="name" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <input type="email" formControlName="email" class="form-control" />
+    <div
+      *ngIf="
+        formSignup.get('email')?.hasError('required') &&
+        (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)
+      "
+    >
+      Trường email bắt buộc phải nhập
+    </div>
+    <div
+      *ngIf="
+        formSignup.get('email')?.hasError('email') &&
+        (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)
+      "
+    >
+      Email không đúng định dạng
+    </div>
+  </div>
+  <div class="mb-3">
+    <input type="password" formControlName="password" class="form-control" />
+    <div
+      *ngIf="
+        formSignup.get('password')?.hasError('required') &&
+        (formSignup.get('password')?.touched ||
+          formSignup.get('password')?.dirty)
+      "
+    >
+      Trường password bắt buộc phải nhập
+    </div>
+    <div
+      *ngIf="
+        formSignup.get('password')?.hasError('minlength') &&
+        (formSignup.get('password')?.touched ||
+          formSignup.get('password')?.dirty)
+      "
+    >
+      Trường password bắt buộc phải nhập 6 ký tự
+    </div>
+  </div>
+  <div class="mb-3">
+    <input
+      type="password"
+      formControlName="confirmPassword"
+      class="form-control"
+    />
+    <div
+      *ngIf="
+        formSignup?.hasError('notSame') &&
+        (formSignup.get('confirmPassword')?.touched ||
+          formSignup.get('confirmPassword')?.dirty)
+      "
+    >
+      Mật khẩu không khớp
+    </div>
+  </div>
+  <button>Submit</button>
+</form>

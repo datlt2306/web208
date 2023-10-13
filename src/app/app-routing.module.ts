@@ -7,12 +7,14 @@ import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { productAdminRoutes, productWebsiteRoutes } from './routes/product.route';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   {
     path: "", component: BaseLayoutComponent, children: [
       { path: "", component: HomeComponent },
       { path: "contact", component: ContactComponent },
+      { path: "signup", component: SignupComponent },
       ...productWebsiteRoutes
     ],
   },

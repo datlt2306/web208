@@ -12,6 +12,7 @@ import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductModule } from './modules/product.module';
+import { SignupComponent } from './pages/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { ProductModule } from './modules/product.module';
     HeaderComponent,
     ContactComponent,
     DashboardComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

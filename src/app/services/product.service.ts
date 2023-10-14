@@ -11,8 +11,8 @@ export class ProductService {
 
   constructor(private http: HttpClient) {
   }
-  getAll(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(this.API_URL);
+  getAll(): Observable<{ data: { docs: IProduct[] }, pagination: {} }> {
+    return this.http.get<{ data: { docs: IProduct[] }, pagination: {} }>(this.API_URL);
   }
   getItemById(id: number | string): Observable<IProduct> {
     return this.http.get<IProduct>(`${this.API_URL}/${id}`);

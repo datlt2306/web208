@@ -14,7 +14,10 @@ export class ProductsComponent {
 
     constructor(private productService: ProductService) {
         this.productService.getAll().subscribe({
-            next: (data) => this.products = data,
+            next: ({ data: docs }: {
+                data: { docs: IProduct[] },
+                pagination: {}
+            }) => console.log(docs),
             error: (error) => console.log(error)
         })
     }

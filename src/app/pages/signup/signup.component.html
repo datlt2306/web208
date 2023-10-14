@@ -1,0 +1,78 @@
+<p>signup works!</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="formSignup">
+    <div class="mb-3">
+        <input type="text" formControlName="name" placeholder="name" />
+    </div>
+    <div class="mb-3">
+        <input type="email" formControlName="email" placeholder="email" />
+        <div
+            *ngIf="
+                formSignup.get('email')?.hasError('required') &&
+                (formSignup.get('email')?.touched ||
+                    formSignup.get('email')?.dirty)
+            "
+        >
+            Email bắt buộc
+        </div>
+        <div
+            *ngIf="
+                formSignup.get('email')?.hasError('email') &&
+                (formSignup.get('email')?.touched ||
+                    formSignup.get('email')?.dirty)
+            "
+        >
+            Email không đúng
+        </div>
+    </div>
+    <div class="mb-3">
+        <input
+            type="password"
+            formControlName="password"
+            placeholder="password"
+        />
+        <div
+            *ngIf="
+                formSignup.get('password')?.hasError('required') &&
+                (formSignup.get('password')?.touched ||
+                    formSignup.get('password')?.dirty)
+            "
+        >
+            Password là bắt buộc
+        </div>
+        <div
+            *ngIf="
+                formSignup.get('password')?.hasError('minlength') &&
+                (formSignup.get('password')?.touched ||
+                    formSignup.get('password')?.dirty)
+            "
+        >
+            Password ít nhất 6 ký tự
+        </div>
+    </div>
+    <div class="mb-3">
+        <input
+            type="password"
+            formControlName="confirmPassword"
+            placeholder="confirmPassword"
+        />
+        <div
+            *ngIf="
+                formSignup.get('confirmPassword')?.hasError('required') &&
+                (formSignup.get('confirmPassword')?.touched ||
+                    formSignup.get('confirmPassword')?.dirty)
+            "
+        >
+            Confirm Password là bắt buộc
+        </div>
+        <div
+            *ngIf="
+                formSignup.hasError('notSame') &&
+                (formSignup.get('confirmPassword')?.touched ||
+                    formSignup.get('confirmPassword')?.dirty)
+            "
+        >
+            Mật khẩu không trùng
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

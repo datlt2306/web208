@@ -20,6 +20,7 @@ import { ProductComponent } from './pages/product/product.component';
 import { SearchBoxPipe } from './search-box.pipe';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ProductModule } from './modules/product.module';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ProductModule } from './modules/product.module';
     HomeComponent,
     DashboardComponent,
     HomePageComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

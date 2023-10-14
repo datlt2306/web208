@@ -11,6 +11,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductComponent } from './pages/product/product.component';
 import { adminRoutes, productRoutes } from './routes/product.routes';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
     path: "", component: BaseLayoutComponent, children: [
       { path: "", component: HomePageComponent },
       { path: "contact", component: ContactComponent },
+      { path: "signup", component: SignupComponent },
       ...productRoutes,
     ]
   },

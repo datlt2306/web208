@@ -1,0 +1,74 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="formSignup">
+    <div class="mb-3">
+        <input type="text" formControlName="name" placeholder="Name" />
+    </div>
+    <div class="mb-3">
+        <input type="email" formControlName="email" placeholder="Email" />
+        <div
+            class="error"
+            *ngIf="
+                formSignup.get('email')?.hasError('required') &&
+                (formSignup.get('email')?.touched ||
+                    formSignup.get('email')?.dirty)
+            "
+        >
+            Email required
+        </div>
+        <div
+            class="error"
+            *ngIf="
+                formSignup.get('email')?.hasError('email') &&
+                (formSignup.get('email')?.touched ||
+                    formSignup.get('email')?.dirty)
+            "
+        >
+            Email required
+        </div>
+    </div>
+    <div class="mb-3">
+        <input
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+        />
+        <div
+            class="error"
+            *ngIf="
+                formSignup.get('password')?.hasError('required') &&
+                (formSignup.get('password')?.touched ||
+                    formSignup.get('password')?.dirty)
+            "
+        >
+            password required
+        </div>
+        <div
+            class="error"
+            *ngIf="
+                formSignup.get('password')?.hasError('minlength') &&
+                (formSignup.get('password')?.touched ||
+                    formSignup.get('password')?.dirty)
+            "
+        >
+            min 6 ky tu
+        </div>
+    </div>
+    <div class="mb-3">
+        <input
+            type="password"
+            formControlName="confirmPassword"
+            placeholder="Confirm Password"
+        />
+
+        <div
+            class="error"
+            *ngIf="
+                formSignup?.hasError('notMatch') &&
+                (formSignup.get('confirmPassword')?.touched ||
+                    formSignup.get('confirmPassword')?.dirty)
+            "
+        >
+            Khong trung mat khau
+        </div>
+    </div>
+    <button>Signup</button>
+</form>

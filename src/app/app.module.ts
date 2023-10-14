@@ -17,6 +17,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductComponent } from './pages/product/product.component';
 import { SearchBoxPipe } from './search-box.pipe';
+import { SignupComponent } from './pages/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { SearchBoxPipe } from './search-box.pipe';
     HomePageComponent,
     DashboardComponent,
     ProductEditComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

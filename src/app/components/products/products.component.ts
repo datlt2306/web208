@@ -13,9 +13,9 @@ export class ProductsComponent {
 
   constructor(private productService: ProductService) {
     this.productService.getAll().subscribe({
-      next: ({ data }: any) => {
+      next: ({ data: { docs } }: { data: { docs: IProduct[] } }) => {
         // { data: [], pagination: { }}
-        this.products = data;
+        this.products = docs;
       },
       error: (error) => {
         console.log(error.message)
@@ -24,7 +24,7 @@ export class ProductsComponent {
   }
 
   searchText: string = "";
-  removeItem(id:string) {
+  removeItem(id: string) {
     console.log(id);
     const confirm = window.confirm('Are you fucking sure?');
     if (confirm) {
